@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GHw-PV-HnW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AnLibDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119" y="104"/>
+        </scene>
+        <!--Pop Input View Controller-->
+        <scene sceneID="wDp-wW-LDO">
+            <objects>
+                <viewController id="GHw-PV-HnW" customClass="PopInputViewController" customModule="AnLibDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LuE-MS-WBW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7t-bC-TzC">
+                                <rect key="frame" x="168.5" y="211.5" width="77" height="30"/>
+                                <state key="normal" title="Show input"/>
+                                <connections>
+                                    <action selector="onShowDefaultClicked:" destination="GHw-PV-HnW" eventType="touchUpInside" id="sBm-O0-6oU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jm-ej-jx7">
+                                <rect key="frame" x="140" y="497" width="134" height="30"/>
+                                <state key="normal" title="Show Custom input"/>
+                                <connections>
+                                    <action selector="onShowCustomClicked:" destination="GHw-PV-HnW" eventType="touchUpInside" id="aKZ-wP-6J6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="809-bZ-B9i"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="9Jm-ej-jx7" firstAttribute="centerX" secondItem="Q7t-bC-TzC" secondAttribute="centerX" id="RYI-7t-oiH"/>
+                            <constraint firstItem="Q7t-bC-TzC" firstAttribute="centerX" secondItem="809-bZ-B9i" secondAttribute="centerX" id="jre-8y-pgb"/>
+                            <constraint firstItem="9Jm-ej-jx7" firstAttribute="top" secondItem="Q7t-bC-TzC" secondAttribute="bottom" constant="255.5" id="qun-A1-hbW"/>
+                            <constraint firstItem="Q7t-bC-TzC" firstAttribute="centerY" secondItem="809-bZ-B9i" secondAttribute="centerY" multiplier="0.5" id="wEn-r2-bxM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nJ4-wb-8ja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840.57971014492762" y="106.47321428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
