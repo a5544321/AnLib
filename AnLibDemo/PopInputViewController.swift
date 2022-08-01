@@ -17,7 +17,7 @@ class PopInputViewController: UIViewController {
     }
     
     @IBAction func onShowDefaultClicked(_ sender: Any) {
-        let view: AnPopInputView = AnPopInputView(message: "Enter")
+        let view: AnPopInputView = AnPopInputView(title: "Enter", message: "Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message ")
         view.showIn(view: self.view)
         view.onClickOK = { message in
             print(message)
@@ -26,15 +26,26 @@ class PopInputViewController: UIViewController {
     }
     
     @IBAction func onShowCustomClicked(_ sender: Any) {
-        let view: CustomPopupInputView = CustomPopupInputView(message: "Custom")
-        
+        let view: CustomPopupInputView = CustomPopupInputView(title: "Enter", message: "Custom")
+        view.verticleRate = 1
         view.showIn(view: self.view)
         view.onClickOK = { message in
             print(message)
         }
     }
     
+    @IBAction func onShowAlertClicked(_ sender: Any) {
+        let view = ImageAlertView(title: "Image", message: "Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok ")
+        
+        view.showIn(view: self.view)
+    }
     
+    @IBAction func onShowToastClicked(_ sender: Any) {
+        let view = AnToastView(title: "Title Title ", message: "message message message message message", image: UIImage(systemName: "checkmark.circle"), length: .long)
+        view.setImageColor(color: .green)
+        view.setTitleTextColor(color: .red)
+        view.showIn(view: self.view)
+    }
     /*
     // MARK: - Navigation
 

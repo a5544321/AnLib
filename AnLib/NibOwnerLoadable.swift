@@ -13,12 +13,12 @@ import UIKit
 
 // https://medium.com/jeremy-xue-s-blog/swift-%E5%89%B5%E5%BB%BA%E8%87%AA%E5%AE%9A%E7%BE%A9%E8%A6%96%E5%9C%96-customview-8d61402ae937
 
-protocol NibOwnerLoadable: AnyObject {
+public protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }
 
 // MARK: - Default implmentation
-extension NibOwnerLoadable {
+public extension NibOwnerLoadable {
     
     static var nib: UINib {
         UINib(nibName: String(describing: self), bundle: Bundle(for: self))
@@ -26,7 +26,7 @@ extension NibOwnerLoadable {
 }
 
 // MARK: - Supporting methods
-extension NibOwnerLoadable where Self: UIView {
+public extension NibOwnerLoadable where Self: UIView {
     
     func loadNibContent() {
         guard let views = Self.nib.instantiate(withOwner: self, options: nil) as? [UIView],

@@ -45,6 +45,22 @@
                                     <action selector="onShowCustomClicked:" destination="GHw-PV-HnW" eventType="touchUpInside" id="aKZ-wP-6J6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7t-jk-Hf7">
+                                <rect key="frame" x="148" y="584" width="119" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show Image alert"/>
+                                <connections>
+                                    <action selector="onShowAlertClicked:" destination="GHw-PV-HnW" eventType="touchUpInside" id="5kC-4f-Skm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Px-kM-4HM">
+                                <rect key="frame" x="168" y="636" width="79" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show Toast"/>
+                                <connections>
+                                    <action selector="onShowToastClicked:" destination="GHw-PV-HnW" eventType="touchUpInside" id="jhT-IR-rlR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="809-bZ-B9i"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
