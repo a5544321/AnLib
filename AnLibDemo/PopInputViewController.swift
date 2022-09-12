@@ -35,16 +35,18 @@ class PopInputViewController: UIViewController {
     }
     
     @IBAction func onShowAlertClicked(_ sender: Any) {
-        let view = ImageAlertView(title: "Image", message: "Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok ")
+        
+        let view = AnAlertView(title: "Image", message: "Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok ", image: UIImage(systemName: "questionmark.circle.fill"), popStyle: .alert)
         
         view.showIn(view: self.view)
     }
     
     @IBAction func onShowToastClicked(_ sender: Any) {
-        let view = AnToastView(title: "Title Title ", message: "message message message message message", image: UIImage(systemName: "checkmark.circle"), length: .long)
-        view.setImageColor(color: .green)
-        view.setTitleTextColor(color: .red)
-        view.showIn(view: self.view)
+//        let view = AnToastView(title: "Title Title ", message: "message message message message message", image: UIImage(systemName: "checkmark.circle"), position: .top, length: .long)
+//        view.setImageColor(color: .green)
+//        view.setTitleTextColor(color: .red)
+//        view.showIn(view: self.view)
+        self.view.showToast(title: "Success!", style: .black)
     }
     /*
     // MARK: - Navigation

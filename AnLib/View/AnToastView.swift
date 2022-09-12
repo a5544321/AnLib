@@ -8,11 +8,14 @@
 import Foundation
 import UIKit
 
-public enum ToastStyle {
+public enum ColorStyle {
     case dark, black, white
 }
 public enum ToastLength: Double {
     case short = 1.0, medium = 2.0, long = 3.0
+}
+public enum ToastPosition {
+    case top, mid, bottom
 }
 
 public class AnToastView: UIView {
@@ -20,7 +23,7 @@ public class AnToastView: UIView {
     var titleLabel: UILabel?
     var messageLabel: UILabel?
     var cancelButton: UIButton?
-    var style: ToastStyle?
+    var style: ColorStyle?
     var leftImage: UIImage?
     var isCancelable: Bool = true
     let margin: CGFloat = 8.0
@@ -34,6 +37,8 @@ public class AnToastView: UIView {
     var messageTextColor = UIColor.black
     var cancelColor = UIColor.black
     var imageTintColor: UIColor?
+    var position: ToastPosition!
+    var borderDistance: CGFloat = 20.0
     
     var imageWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .phone{
@@ -63,12 +68,13 @@ public class AnToastView: UIView {
         self.imageTintColor = color
     }
     
-    public convenience init(title: String, message: String? = nil, image: UIImage? = nil, length: ToastLength = .medium, style: ToastStyle? = nil, isCancelable: Bool = true) {
+    public convenience init(title: String, message: String? = nil, image: UIImage? = nil, position: ToastPosition = .top, length: ToastLength = .medium, style: ColorStyle? = nil, isCancelable: Bool = true) {
         self.init(frame: .zero)
         backgroundColor = .white
         mTitle = title
         mMessage = message
         leftImage = image
+        self.position = position
         self.length = length
         self.style = style
         self.isCancelable = isCancelable
@@ -162,7 +168,6 @@ public class AnToastView: UIView {
     }
     
     func loadUI() {
-        
         self.setCornerRadius(radius: 12)
         if style != nil {
             if style == .black {
@@ -202,9 +207,16 @@ public class AnToastView: UIView {
         view.addSubview(self)
         self.alpha = 0
         NSLayoutConstraint.activate([self.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
-                                     self.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                     self.topAnchor.constraint(equalTo: view.topAnchor, constant: margin * 5)])
+                                     self.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
+        if self.position == .top {
+            self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: borderDistance).isActive = true
+        } else if self.position == .mid {
+            self.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        } else {
+            self.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -borderDistance).isActive = true
+        }
         layoutIfNeeded()
+        
         UIView.transition(with: view, duration: 0.25, options: .transitionCrossDissolve) { [self] in
             self.alpha = 1
         } completion: { (com) in
@@ -227,5 +239,13 @@ public class AnToastView: UIView {
         }
 
         
+    }
+}
+
+public extension UIView {
+    public func showToast(title: String, message: String? = nil, image: UIImage? = nil, position: ToastPosition = .top, length: ToastLength = .medium, style: ColorStyle? = nil, isCancelable: Bool = true) {
+        let toast = AnToastView(title: title, message: message, image: image, position: position, length: length, style: style, isCancelable: isCancelable)
+        
+        toast.showIn(view: self)
     }
 }

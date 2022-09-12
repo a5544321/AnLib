@@ -38,9 +38,15 @@
                                     <action selector="onShowDefaultClicked:" destination="GHw-PV-HnW" eventType="touchUpInside" id="sBm-O0-6oU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jm-ej-jx7">
-                                <rect key="frame" x="140" y="497" width="134" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jm-ej-jx7" customClass="RoundFillButton" customModule="AnLib">
+                                <rect key="frame" x="41.5" y="497" width="331" height="30"/>
                                 <state key="normal" title="Show Custom input"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="mainColor">
+                                        <color key="value" systemColor="systemTealColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isFill" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onShowCustomClicked:" destination="GHw-PV-HnW" eventType="touchUpInside" id="aKZ-wP-6J6"/>
                                 </connections>
@@ -68,6 +74,7 @@
                             <constraint firstItem="9Jm-ej-jx7" firstAttribute="centerX" secondItem="Q7t-bC-TzC" secondAttribute="centerX" id="RYI-7t-oiH"/>
                             <constraint firstItem="Q7t-bC-TzC" firstAttribute="centerX" secondItem="809-bZ-B9i" secondAttribute="centerX" id="jre-8y-pgb"/>
                             <constraint firstItem="9Jm-ej-jx7" firstAttribute="top" secondItem="Q7t-bC-TzC" secondAttribute="bottom" constant="255.5" id="qun-A1-hbW"/>
+                            <constraint firstItem="9Jm-ej-jx7" firstAttribute="width" secondItem="LuE-MS-WBW" secondAttribute="width" multiplier="0.8" id="u2g-3B-8xF"/>
                             <constraint firstItem="Q7t-bC-TzC" firstAttribute="centerY" secondItem="809-bZ-B9i" secondAttribute="centerY" multiplier="0.5" id="wEn-r2-bxM"/>
                         </constraints>
                     </view>
@@ -80,6 +87,9 @@
     <resources>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

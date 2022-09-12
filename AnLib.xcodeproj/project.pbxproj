@@ -32,6 +32,12 @@
 		A1503AB328446994004167D4 /* CustomPopupInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1503AB228446994004167D4 /* CustomPopupInputView.xib */; };
 		A1503AB828446B11004167D4 /* CustomPopupInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1503AB728446B11004167D4 /* CustomPopupInputView.swift */; };
 		A179D70D28923860003B7AE9 /* AnToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179D70C28923860003B7AE9 /* AnToastView.swift */; };
+		A17C7BF3289BA3D500ACD7F7 /* AnPopupStringTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C7BF2289BA3D500ACD7F7 /* AnPopupStringTableView.swift */; };
+		A17C7BF8289BA48C00ACD7F7 /* AnPopupStringTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C7BF7289BA48C00ACD7F7 /* AnPopupStringTableView.xib */; };
+		A19FDE4528C8876800042BDB /* RoundFillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19FDE4428C8876800042BDB /* RoundFillButton.swift */; };
+		A1B0000128B4CECE004EF6DD /* AnAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B0000028B4CECE004EF6DD /* AnAlertView.swift */; };
+		A1B0000628B4CEF9004EF6DD /* AnAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B0000528B4CEF9004EF6DD /* AnAlertView.xib */; };
+		A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +110,12 @@
 		A1503AB228446994004167D4 /* CustomPopupInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopupInputView.xib; sourceTree = "<group>"; };
 		A1503AB728446B11004167D4 /* CustomPopupInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupInputView.swift; sourceTree = "<group>"; };
 		A179D70C28923860003B7AE9 /* AnToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnToastView.swift; sourceTree = "<group>"; };
+		A17C7BF2289BA3D500ACD7F7 /* AnPopupStringTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnPopupStringTableView.swift; sourceTree = "<group>"; };
+		A17C7BF7289BA48C00ACD7F7 /* AnPopupStringTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnPopupStringTableView.xib; sourceTree = "<group>"; };
+		A19FDE4428C8876800042BDB /* RoundFillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundFillButton.swift; sourceTree = "<group>"; };
+		A1B0000028B4CECE004EF6DD /* AnAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnAlertView.swift; sourceTree = "<group>"; };
+		A1B0000528B4CEF9004EF6DD /* AnAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnAlertView.xib; sourceTree = "<group>"; };
+		A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,8 +226,10 @@
 		A1433E802840C3BD006F48D6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A14710062890D744007940E9 /* Popup */,
 				A1433E822840C3BD006F48D6 /* AnLoadingView.swift */,
+				A179D70C28923860003B7AE9 /* AnToastView.swift */,
+				A14710062890D744007940E9 /* Popup */,
+				A19FDE4428C8876800042BDB /* RoundFillButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,6 +240,7 @@
 				A1433E862840C3BD006F48D6 /* ViewControl.swift */,
 				A1433E872840C3BD006F48D6 /* ViewLayout.swift */,
 				A147100F28910BA6007940E9 /* StringExtension.swift */,
+				A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */,
 			);
 			path = ViewExtension;
 			sourceTree = "<group>";
@@ -243,7 +258,10 @@
 				A1433E812840C3BD006F48D6 /* AnPopInputView.xib */,
 				A1433E832840C3BD006F48D6 /* PopInputView.swift */,
 				A147100A2890D760007940E9 /* PopupBasic.swift */,
-				A179D70C28923860003B7AE9 /* AnToastView.swift */,
+				A17C7BF2289BA3D500ACD7F7 /* AnPopupStringTableView.swift */,
+				A17C7BF7289BA48C00ACD7F7 /* AnPopupStringTableView.xib */,
+				A1B0000028B4CECE004EF6DD /* AnAlertView.swift */,
+				A1B0000528B4CEF9004EF6DD /* AnAlertView.xib */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -387,6 +405,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A17C7BF8289BA48C00ACD7F7 /* AnPopupStringTableView.xib in Resources */,
+				A1B0000628B4CEF9004EF6DD /* AnAlertView.xib in Resources */,
 				A1433E882840C3BD006F48D6 /* AnPopInputView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,7 +450,11 @@
 				A147100B2890D760007940E9 /* PopupBasic.swift in Sources */,
 				A1433E8C2840C3BD006F48D6 /* ViewControl.swift in Sources */,
 				A1433E892840C3BD006F48D6 /* AnLoadingView.swift in Sources */,
+				A17C7BF3289BA3D500ACD7F7 /* AnPopupStringTableView.swift in Sources */,
+				A19FDE4528C8876800042BDB /* RoundFillButton.swift in Sources */,
+				A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */,
 				A1433E8B2840C3BD006F48D6 /* NibOwnerLoadable.swift in Sources */,
+				A1B0000128B4CECE004EF6DD /* AnAlertView.swift in Sources */,
 				A1433E8A2840C3BD006F48D6 /* PopInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
