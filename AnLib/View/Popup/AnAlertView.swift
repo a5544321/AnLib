@@ -6,7 +6,7 @@
 //
 
 import UIKit
-@available(iOS 13.0, *)
+
 public class AnAlertView: AnPopupBasicView {
     
     @IBOutlet weak var titleTopToImageConstraint: NSLayoutConstraint!
@@ -17,7 +17,7 @@ public class AnAlertView: AnPopupBasicView {
     @IBOutlet weak var mImageView: UIImageView!
     var mImage: UIImage?
     var cancelTitle: String?
-    
+    // test commit 321321
     public init(title: String?, message: String?, image: UIImage?, popStyle: PopStyle = .alert) {
         
         mImage = image
@@ -32,7 +32,7 @@ public class AnAlertView: AnPopupBasicView {
         mImageView.tintColor = color
     }
     
-    override func adjustHeight() {
+    public override func adjustHeight() {
         if mImage != nil {
             mImageView.image = mImage
             mainHeightConstraint?.constant = 300

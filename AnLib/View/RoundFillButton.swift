@@ -7,21 +7,32 @@
 
 import UIKit
 
-class RoundFillButton: UIButton {
-    @IBInspectable var mainColor: UIColor = .blue {
+public class RoundFillButton: UIButton {
+    @IBInspectable public var mainColor: UIColor = .blue {
         didSet {
             setUI()
         }
     }
-    @IBInspectable var isFill: Bool = true {
+    @IBInspectable public var customTitleColor: UIColor?{
+        didSet {
+            setUI()
+        }
+    }
+    @IBInspectable public var isFill: Bool = true {
         didSet {
             setUI()
         }
     }
     
-    override var bounds: CGRect {
+    public override var bounds: CGRect {
         didSet {
             setCornerRadius(radius: bounds.height * 0.5)
+        }
+    }
+    
+    public override var isEnabled: Bool {
+        didSet {
+            
         }
     }
     
@@ -38,12 +49,18 @@ class RoundFillButton: UIButton {
 
     func setUI() {
         setCornerRadius(radius: bounds.height * 0.5)
+        setTitleColor(.gray, for: .disabled)
         if isFill {
             backgroundColor = mainColor
-            setTitleColor(.white, for: .normal)
+            let tColor: UIColor = customTitleColor == nil ? .white : customTitleColor!
+            setTitleColor(tColor, for: .normal)
+            setTitleColor(tColor.withAlphaComponent(0.4), for: .highlighted)
         } else {
             backgroundColor = .clear
             setTitleColor(mainColor, for: .normal)
+            setTitleColor(mainColor.withAlphaComponent(0.4), for: .highlighted)
+            setRoundBorder(color: mainColor)
         }
+        
     }
 }

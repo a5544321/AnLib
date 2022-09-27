@@ -57,10 +57,10 @@ class AnLoadingView: UIView {
     }
     
     convenience init(message: String?) {
-        self.init(message: message, textColor: UIColor.white, loadStyle: .medium)
+        self.init(message: message, textColor: UIColor.white, loadStyle: .white)
     }
     convenience init() {
-        self.init(message: nil, textColor: UIColor.white, loadStyle: .medium)
+        self.init(message: nil, textColor: UIColor.white, loadStyle: .white)
     }
 
     

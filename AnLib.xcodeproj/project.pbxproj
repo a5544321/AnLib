@@ -34,10 +34,14 @@
 		A179D70D28923860003B7AE9 /* AnToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179D70C28923860003B7AE9 /* AnToastView.swift */; };
 		A17C7BF3289BA3D500ACD7F7 /* AnPopupStringTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C7BF2289BA3D500ACD7F7 /* AnPopupStringTableView.swift */; };
 		A17C7BF8289BA48C00ACD7F7 /* AnPopupStringTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C7BF7289BA48C00ACD7F7 /* AnPopupStringTableView.xib */; };
+		A19D253028D9BA4A00FBB72B /* AnMessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D252F28D9BA4A00FBB72B /* AnMessageTextField.swift */; };
+		A19D253528D9BCD800FBB72B /* AnMessageTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19D253428D9BCD800FBB72B /* AnMessageTextField.xib */; };
 		A19FDE4528C8876800042BDB /* RoundFillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19FDE4428C8876800042BDB /* RoundFillButton.swift */; };
 		A1B0000128B4CECE004EF6DD /* AnAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B0000028B4CECE004EF6DD /* AnAlertView.swift */; };
 		A1B0000628B4CEF9004EF6DD /* AnAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B0000528B4CEF9004EF6DD /* AnAlertView.xib */; };
 		A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */; };
+		A1EA819F28DAB1F80076FE1B /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */; };
+		A1EA81A428DAB3430076FE1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1EA81A328DAB3430076FE1B /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,10 +116,14 @@
 		A179D70C28923860003B7AE9 /* AnToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnToastView.swift; sourceTree = "<group>"; };
 		A17C7BF2289BA3D500ACD7F7 /* AnPopupStringTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnPopupStringTableView.swift; sourceTree = "<group>"; };
 		A17C7BF7289BA48C00ACD7F7 /* AnPopupStringTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnPopupStringTableView.xib; sourceTree = "<group>"; };
+		A19D252F28D9BA4A00FBB72B /* AnMessageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnMessageTextField.swift; sourceTree = "<group>"; };
+		A19D253428D9BCD800FBB72B /* AnMessageTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnMessageTextField.xib; sourceTree = "<group>"; };
 		A19FDE4428C8876800042BDB /* RoundFillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundFillButton.swift; sourceTree = "<group>"; };
 		A1B0000028B4CECE004EF6DD /* AnAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnAlertView.swift; sourceTree = "<group>"; };
 		A1B0000528B4CEF9004EF6DD /* AnAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnAlertView.xib; sourceTree = "<group>"; };
 		A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		A1EA81A328DAB3430076FE1B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +190,7 @@
 				A1433E852840C3BD006F48D6 /* ViewExtension */,
 				A1433E3F2840C34C006F48D6 /* AnLib.h */,
 				A1433E402840C34C006F48D6 /* Info.plist */,
+				A1EA81A328DAB3430076FE1B /* Images.xcassets */,
 			);
 			path = AnLib;
 			sourceTree = "<group>";
@@ -230,6 +239,8 @@
 				A179D70C28923860003B7AE9 /* AnToastView.swift */,
 				A14710062890D744007940E9 /* Popup */,
 				A19FDE4428C8876800042BDB /* RoundFillButton.swift */,
+				A19D252F28D9BA4A00FBB72B /* AnMessageTextField.swift */,
+				A19D253428D9BCD800FBB72B /* AnMessageTextField.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +252,7 @@
 				A1433E872840C3BD006F48D6 /* ViewLayout.swift */,
 				A147100F28910BA6007940E9 /* StringExtension.swift */,
 				A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */,
+				A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */,
 			);
 			path = ViewExtension;
 			sourceTree = "<group>";
@@ -405,6 +417,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A19D253528D9BCD800FBB72B /* AnMessageTextField.xib in Resources */,
+				A1EA81A428DAB3430076FE1B /* Images.xcassets in Resources */,
 				A17C7BF8289BA48C00ACD7F7 /* AnPopupStringTableView.xib in Resources */,
 				A1B0000628B4CEF9004EF6DD /* AnAlertView.xib in Resources */,
 				A1433E882840C3BD006F48D6 /* AnPopInputView.xib in Resources */,
@@ -447,6 +461,7 @@
 				A1433E8D2840C3BD006F48D6 /* ViewLayout.swift in Sources */,
 				A179D70D28923860003B7AE9 /* AnToastView.swift in Sources */,
 				A147101028910BA6007940E9 /* StringExtension.swift in Sources */,
+				A19D253028D9BA4A00FBB72B /* AnMessageTextField.swift in Sources */,
 				A147100B2890D760007940E9 /* PopupBasic.swift in Sources */,
 				A1433E8C2840C3BD006F48D6 /* ViewControl.swift in Sources */,
 				A1433E892840C3BD006F48D6 /* AnLoadingView.swift in Sources */,
@@ -454,6 +469,7 @@
 				A19FDE4528C8876800042BDB /* RoundFillButton.swift in Sources */,
 				A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */,
 				A1433E8B2840C3BD006F48D6 /* NibOwnerLoadable.swift in Sources */,
+				A1EA819F28DAB1F80076FE1B /* UIColorExt.swift in Sources */,
 				A1B0000128B4CECE004EF6DD /* AnAlertView.swift in Sources */,
 				A1433E8A2840C3BD006F48D6 /* PopInputView.swift in Sources */,
 			);
@@ -580,7 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -638,7 +654,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -709,6 +725,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QNK6V4TQT8;
 				INFOPLIST_FILE = AnLibDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -728,6 +745,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QNK6V4TQT8;
 				INFOPLIST_FILE = AnLibDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

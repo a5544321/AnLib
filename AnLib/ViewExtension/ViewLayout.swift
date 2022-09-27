@@ -39,6 +39,11 @@ public extension UIView {
         self.layer.borderColor = color.cgColor
     }
     
+    func setBorder(color: UIColor, width: CGFloat = 1) {
+        self.layer.borderWidth = width
+        self.layer.borderColor = color.cgColor
+    }
+    
     func setCornerRadius(radius: CGFloat) {
         self.layer.cornerRadius = radius
         self.layer.masksToBounds = true

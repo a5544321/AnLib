@@ -27,11 +27,11 @@ extension PopupBasic where Self: UIView{
 public enum PopStyle {
     case alert, bottomCard
 }
-@available(iOS 13.0, *)
+
 open class AnPopupBasicView: UIView, PopupBasic {
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet public weak var titleLabel: UILabel!
     
-    @IBOutlet weak var messageLabel: UILabel?
+    @IBOutlet public weak var messageLabel: UILabel?
     
     @IBOutlet public weak var okButton: UIButton!
     
@@ -41,7 +41,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
     
     public var onClickCancel: (() -> ())?
     
-    public private(set) var popStyle: PopStyle = .alert
+    public internal(set) var popStyle: PopStyle = .alert
     
     
     /// Popup view verticle position in parent view, 1 = center Y, default is 0.7
@@ -62,12 +62,13 @@ open class AnPopupBasicView: UIView, PopupBasic {
         return -(mainHeightConstraint?.constant ?? 245) - bottomMargin
     }
     
-    var mainView: UIView?
+    public var mainView: UIView?
     var topGestureView: UIView?
     let bottomMargin: CGFloat = 20
     
     var customSize: CGSize?
     var centerYConstraint: NSLayoutConstraint?
+    var titleHeightConstraint: NSLayoutConstraint?
     var mainHeightConstraint: NSLayoutConstraint?
     var animateTopConstraint: NSLayoutConstraint?
     
@@ -108,12 +109,13 @@ open class AnPopupBasicView: UIView, PopupBasic {
         self.addSubview(mainView!)
     }
     
-    func initConstraint() {
+    open func initConstraint() {
         guard let contentView = mainView else {
             return
         }
         contentView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        
+        titleHeightConstraint = titleLabel.heightAnchor.constraint(equalToConstant: 25)
+        titleHeightConstraint?.isActive = true
         if popStyle == .alert {
             centerYConstraint = NSLayoutConstraint(item: contentView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: CGFloat(verticleRate), constant: 0)
             centerYConstraint?.isActive = true
@@ -122,12 +124,12 @@ open class AnPopupBasicView: UIView, PopupBasic {
             addTopIndicator()
             animateTopConstraint = contentView.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
             animateTopConstraint?.isActive = true
-            contentView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.85).isActive = true
+            contentView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9).isActive = true
         }
         
     }
     
-    func configSize() {
+    open func configSize() {
         if customSize != nil {
             mainHeightConstraint = mainView?.heightAnchor.constraint(equalToConstant: customSize!.height)
             mainHeightConstraint!.isActive = true
@@ -138,7 +140,13 @@ open class AnPopupBasicView: UIView, PopupBasic {
         adjustHeight()
     }
     
-    func adjustHeight() {
+    open func adjustHeight() {
+        let cHeight = titleLabel.text?.height(withConstrainedWidth: titleLabel.bounds.width, font: titleLabel.font) ?? 0
+        let diff = cHeight - titleLabel.bounds.height
+        if diff > 0 {
+            titleHeightConstraint?.constant = cHeight
+            mainHeightConstraint?.constant = mainHeightConstraint!.constant + diff
+        }
         if let msgLabel = messageLabel {
             let calculateHeight =  msgLabel.text != nil ? msgLabel.text!.height(withConstrainedWidth: msgLabel.bounds.width, font: msgLabel.font) : 0
             let dif = calculateHeight - msgLabel.bounds.height
@@ -177,7 +185,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
         topGestureView = UIView()
         topGestureView?.translatesAutoresizingMaskIntoConstraints = false
         let indicator = UIView()
-        indicator.backgroundColor = .systemGray2
+        indicator.backgroundColor = .lightGray
         indicator.setCornerRadius(radius: 2.5)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         topGestureView?.addSubview(indicator)
@@ -200,8 +208,6 @@ open class AnPopupBasicView: UIView, PopupBasic {
     func customInit() {
         okButton.addTarget(self, action: #selector(clickOK), for: .touchUpInside)
         cancelButton?.addTarget(self, action: #selector(clickCancel), for: .touchUpInside)
-        okButton.setCornerRadius(radius: 8)
-        cancelButton?.setCornerRadius(radius: 8)
     }
     
     public func showIn(view: UIView) {
@@ -269,7 +275,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
         }
     }
     
-    @objc func clickOK() {
+    @objc open func clickOK() {
         onClickOK?(nil)
         close()
     }
@@ -280,7 +286,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
     
     
     
-    func close() {
+    open func close() {
         if self.popStyle == .bottomCard,
            let constraint = self.animateTopConstraint {
             
@@ -295,7 +301,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
         }
     }
     
-    @objc func onBackgroudClick(sender: UIButton) {
+    @objc open func onBackgroudClick(sender: UIButton) {
         endEditing(true)
     }
     

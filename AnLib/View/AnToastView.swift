@@ -114,7 +114,7 @@ public class AnToastView: UIView {
         // Close button
         if isCancelable {
             cancelButton = UIButton(frame: .zero)
-            cancelButton?.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(weight: .bold), forImageIn: .normal)
+//            cancelButton?.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(weight: .bold), forImageIn: .normal)
             cancelButton?.translatesAutoresizingMaskIntoConstraints = false
             cancelButton?.addTarget(self, action: #selector(close), for: .touchUpInside)
             self.addSubview(cancelButton!)
@@ -191,7 +191,7 @@ public class AnToastView: UIView {
         titleLabel?.textColor = titleTextColor
         messageLabel?.textColor = messageTextColor
         if isCancelable {
-            cancelButton?.setImage(UIImage(systemName: "xmark"), for: .normal)
+//            cancelButton?.setImage(UIImage(systemName: "xmark"), for: .normal)
             cancelButton?.tintColor = cancelColor
         }
         
