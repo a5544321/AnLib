@@ -82,6 +82,10 @@ public class AnMessageTextField: UIView, NibOwnerLoadable  {
         titleLabel.text = title
     }
     
+    public func setText(text: String?) {
+        textField.text = text
+    }
+    
     public func showErrorMessage(errMsg: String) {
         topContainerView.setBorder(color: errorRed)
         messageLabel.isHidden = false

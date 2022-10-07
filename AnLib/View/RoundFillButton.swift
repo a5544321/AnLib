@@ -32,7 +32,12 @@ public class RoundFillButton: UIButton {
     
     public override var isEnabled: Bool {
         didSet {
-            
+            let bColor = isEnabled ? mainColor : UIColor(hex: "#808080").withAlphaComponent(0.12)
+            if isFill {
+                backgroundColor = bColor
+            } else {
+                setRoundBorder(color: bColor)
+            }
         }
     }
     
@@ -45,7 +50,6 @@ public class RoundFillButton: UIButton {
         super.init(coder: coder)
         setUI()
     }
-    
 
     func setUI() {
         setCornerRadius(radius: bounds.height * 0.5)
@@ -55,10 +59,12 @@ public class RoundFillButton: UIButton {
             let tColor: UIColor = customTitleColor == nil ? .white : customTitleColor!
             setTitleColor(tColor, for: .normal)
             setTitleColor(tColor.withAlphaComponent(0.4), for: .highlighted)
+            setTitleColor(tColor.withAlphaComponent(0.24), for: .disabled)
         } else {
             backgroundColor = .clear
             setTitleColor(mainColor, for: .normal)
             setTitleColor(mainColor.withAlphaComponent(0.4), for: .highlighted)
+            setTitleColor(UIColor.white.withAlphaComponent(0.24), for: .disabled)
             setRoundBorder(color: mainColor)
         }
         

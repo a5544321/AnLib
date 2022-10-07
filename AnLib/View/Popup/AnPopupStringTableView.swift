@@ -18,7 +18,7 @@ public class AnPopupStringTableView: AnPopupBasicView {
         mTableView.reloadData()
     }
     
-    override func customInit() {
+    public override func customInit() {
         super.customInit()
         mTableView.delegate = self
         mTableView.dataSource = self

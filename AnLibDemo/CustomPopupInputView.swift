@@ -10,6 +10,6 @@ import UIKit
 import AnLib
 class CustomPopupInputView:  AnPopInputView{
     override func layoutSubviews() {
-        okButton.setCornerRadius(radius: 10)
+        okButton?.setCornerRadius(radius: 10)
     }
 }

@@ -32,6 +32,11 @@ public class AnAlertView: AnPopupBasicView {
         mImageView.tintColor = color
     }
     
+    public override func setCancelButton(title: String, tintColor: UIColor, isFill: Bool, action: (() -> ())?) {
+        super.setCancelButton(title: title, tintColor: tintColor, isFill: isFill, action: action)
+        cancelButton?.isHidden = false
+        adjustHeight()
+    }
     public override func adjustHeight() {
         if mImage != nil {
             mImageView.image = mImage
@@ -45,13 +50,13 @@ public class AnAlertView: AnPopupBasicView {
         
         if !(cancelButton?.isHidden ?? true) {
             okBottomToCancelConstraint.isActive = true
-            okBottomToSuperConstraint.isActive = false
+//            okBottomToSuperConstraint.isActive = false
             mainHeightConstraint?.constant += 50
             
         } else {
             cancelButton?.isHidden = true
             okBottomToCancelConstraint.isActive = false
-            okBottomToSuperConstraint.isActive = true
+//            okBottomToSuperConstraint.isActive = true
             
         }
         
