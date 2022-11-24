@@ -52,11 +52,11 @@ class PopInputViewController: UIViewController {
     }
     
     @IBAction func onShowToastClicked(_ sender: Any) {
-//        let view = AnToastView(title: "Title Title ", message: "message message message message message", image: UIImage(systemName: "checkmark.circle"), position: .top, length: .long)
-//        view.setImageColor(color: .green)
+        let view = AnToastView(title: "Title Title ", message: "We’re ready to ride a fantastic journey with you.", image: UIImage(systemName: "checkmark.circle"), position: .top, length: .long)
+        view.setImageColor(color: .green)
 //        view.setTitleTextColor(color: .red)
-//        view.showIn(view: self.view)
-        self.view.showToast(title: "Success!", style: .black)
+        view.showIn(view: self.view)
+//        self.view.showToast(title: "Success!", style: .black)
     }
     /*
     // MARK: - Navigation

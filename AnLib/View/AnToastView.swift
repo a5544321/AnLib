@@ -49,9 +49,9 @@ public class AnToastView: UIView {
     }
     var closeWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .phone{
-            return 25
+            return 20
         } else {
-            return 35
+            return 30
         }
     }
     
@@ -95,11 +95,6 @@ public class AnToastView: UIView {
         viewHeightConstraint.constant = totalHeight
     }
     
-    public override func layoutSubviews() {
-        updateHeight()
-        
-    }
-    
     
     func initLayout(title: String, message: String?) {
         // Left image view
@@ -116,6 +111,9 @@ public class AnToastView: UIView {
             cancelButton = UIButton(frame: .zero)
 //            cancelButton?.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(weight: .bold), forImageIn: .normal)
             cancelButton?.translatesAutoresizingMaskIntoConstraints = false
+            cancelButton?.setImage(UIImage(named: "xmark", in: Bundle(for: AnToastView.self), compatibleWith: nil), for: .normal)
+            cancelButton?.imageView?.tintColor = .lightGray
+            cancelButton?.imageView?.contentMode = .scaleAspectFit
             cancelButton?.addTarget(self, action: #selector(close), for: .touchUpInside)
             self.addSubview(cancelButton!)
             NSLayoutConstraint.activate([cancelButton!.centerYAnchor.constraint(equalTo: self.centerYAnchor),
@@ -155,15 +153,10 @@ public class AnToastView: UIView {
             let messageHeight = msg.height(withConstrainedWidth: messageLabel!.bounds.width, font: messageLabel!.font)
             messageHeightConstraint =  messageLabel?.heightAnchor.constraint(equalToConstant: messageHeight)
             messageHeightConstraint?.isActive = true
-            
-            let totalHeight = titleHeight + messageHeight + 3 * margin
-            viewHeightConstraint = self.heightAnchor.constraint(equalToConstant: totalHeight)
-            viewHeightConstraint.isActive = true
-        } else {
-            let totalHeight = titleHeight + 2 * margin
-            viewHeightConstraint = self.heightAnchor.constraint(equalToConstant: totalHeight)
-            viewHeightConstraint.isActive = true
+                        
         }
+        viewHeightConstraint = self.heightAnchor.constraint(equalToConstant: 150) // Will update later
+        viewHeightConstraint.isActive = true
         
     }
     
@@ -216,13 +209,14 @@ public class AnToastView: UIView {
             self.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -borderDistance).isActive = true
         }
         layoutIfNeeded()
+        updateHeight()
         
         UIView.transition(with: view, duration: 0.25, options: .transitionCrossDissolve) { [self] in
             self.alpha = 1
         } completion: { (com) in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self.length.rawValue) { [weak self] in
                 guard let self = self else {
-                    print("already closed")
+                    debugPrint("Toast already closed")
                     return
                 }
                 self.close()

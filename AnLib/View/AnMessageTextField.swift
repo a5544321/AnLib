@@ -14,6 +14,7 @@ public protocol AnMessageTextFieldDelegate: AnyObject {
 }
 public class AnMessageTextField: UIView, NibOwnerLoadable  {
     private let errorRed: UIColor = UIColor(hex: "#E85C4A")
+    private let msgNormalColor: UIColor = UIColor(hex: "#9B9B9B")
     public weak var delegate: AnMessageTextFieldDelegate?
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
@@ -43,6 +44,9 @@ public class AnMessageTextField: UIView, NibOwnerLoadable  {
     
     public var text: String? {
         return textField.text
+    }
+    public var isEmpty: Bool {
+        return (textField.text?.isEmpty ?? true)
     }
     
     
@@ -88,11 +92,26 @@ public class AnMessageTextField: UIView, NibOwnerLoadable  {
     
     public func showErrorMessage(errMsg: String) {
         topContainerView.setBorder(color: errorRed)
+        messageLabel.textColor = errorRed
         messageLabel.isHidden = false
         messageLabel.text = errMsg
     }
     
-    public func hideErrorMessage() {
+    public func showNormalMessage(msg: String) {
+        topContainerView.layer.borderColor = UIColor.clear.cgColor
+        messageLabel.textColor = msgNormalColor
+        messageLabel.isHidden = false
+        messageLabel.text = msg
+    }
+    
+    public func cancelError() {
+        if messageLabel.textColor == errorRed {
+            topContainerView.setBorder(color: .clear)
+            messageLabel.isHidden = true
+        }
+    }
+    
+    public func hideMessage() {
         messageLabel.isHidden = true
         topContainerView.layer.borderColor = UIColor.clear.cgColor
     }
@@ -114,7 +133,6 @@ public class AnMessageTextField: UIView, NibOwnerLoadable  {
 extension AnMessageTextField: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         delegate?.textFieldDidBeginEditing(sender: self)
-        hideErrorMessage()
     }
     public func textFieldDidEndEditing(_ textField: UITextField) {
         delegate?.textFieldDidEndEditing(sender: self)
@@ -125,5 +143,6 @@ extension AnMessageTextField: UITextFieldDelegate {
     
     @objc private func textFieldEditingChangedAction() {
         delegate?.textFieldDidChanged(sender: self)
+        cancelError()
     }
 }

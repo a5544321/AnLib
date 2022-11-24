@@ -31,9 +31,12 @@
 		A147101F289124EB007940E9 /* ImageAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A147101E289124EB007940E9 /* ImageAlertView.xib */; };
 		A1503AB328446994004167D4 /* CustomPopupInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1503AB228446994004167D4 /* CustomPopupInputView.xib */; };
 		A1503AB828446B11004167D4 /* CustomPopupInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1503AB728446B11004167D4 /* CustomPopupInputView.swift */; };
+		A167B2D9292CB28A00096E1F /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167B2D8292CB28A00096E1F /* LogUtil.swift */; };
+		A1779D1828F666630018C263 /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1779D1728F666630018C263 /* CropView.swift */; };
 		A179D70D28923860003B7AE9 /* AnToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179D70C28923860003B7AE9 /* AnToastView.swift */; };
 		A17C7BF3289BA3D500ACD7F7 /* AnPopupStringTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C7BF2289BA3D500ACD7F7 /* AnPopupStringTableView.swift */; };
 		A17C7BF8289BA48C00ACD7F7 /* AnPopupStringTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C7BF7289BA48C00ACD7F7 /* AnPopupStringTableView.xib */; };
+		A18497B5290285C700609E98 /* CenterOriginSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18497B4290285C700609E98 /* CenterOriginSlider.swift */; };
 		A19D253028D9BA4A00FBB72B /* AnMessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D252F28D9BA4A00FBB72B /* AnMessageTextField.swift */; };
 		A19D253528D9BCD800FBB72B /* AnMessageTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19D253428D9BCD800FBB72B /* AnMessageTextField.xib */; };
 		A19FDE4528C8876800042BDB /* RoundFillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19FDE4428C8876800042BDB /* RoundFillButton.swift */; };
@@ -113,9 +116,12 @@
 		A147101E289124EB007940E9 /* ImageAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageAlertView.xib; sourceTree = "<group>"; };
 		A1503AB228446994004167D4 /* CustomPopupInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopupInputView.xib; sourceTree = "<group>"; };
 		A1503AB728446B11004167D4 /* CustomPopupInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupInputView.swift; sourceTree = "<group>"; };
+		A167B2D8292CB28A00096E1F /* LogUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogUtil.swift; sourceTree = "<group>"; };
+		A1779D1728F666630018C263 /* CropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
 		A179D70C28923860003B7AE9 /* AnToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnToastView.swift; sourceTree = "<group>"; };
 		A17C7BF2289BA3D500ACD7F7 /* AnPopupStringTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnPopupStringTableView.swift; sourceTree = "<group>"; };
 		A17C7BF7289BA48C00ACD7F7 /* AnPopupStringTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnPopupStringTableView.xib; sourceTree = "<group>"; };
+		A18497B4290285C700609E98 /* CenterOriginSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterOriginSlider.swift; sourceTree = "<group>"; };
 		A19D252F28D9BA4A00FBB72B /* AnMessageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnMessageTextField.swift; sourceTree = "<group>"; };
 		A19D253428D9BCD800FBB72B /* AnMessageTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnMessageTextField.xib; sourceTree = "<group>"; };
 		A19FDE4428C8876800042BDB /* RoundFillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundFillButton.swift; sourceTree = "<group>"; };
@@ -187,10 +193,11 @@
 			children = (
 				A1433E842840C3BD006F48D6 /* NibOwnerLoadable.swift */,
 				A1433E802840C3BD006F48D6 /* View */,
-				A1433E852840C3BD006F48D6 /* ViewExtension */,
+				A1433E852840C3BD006F48D6 /* Extension */,
 				A1433E3F2840C34C006F48D6 /* AnLib.h */,
 				A1433E402840C34C006F48D6 /* Info.plist */,
 				A1EA81A328DAB3430076FE1B /* Images.xcassets */,
+				A167B2D8292CB28A00096E1F /* LogUtil.swift */,
 			);
 			path = AnLib;
 			sourceTree = "<group>";
@@ -202,6 +209,7 @@
 				A1433E502840C36A006F48D6 /* SceneDelegate.swift */,
 				A1433E522840C36A006F48D6 /* ViewController.swift */,
 				A1433E922840C418006F48D6 /* PopInputViewController.swift */,
+				A18497B4290285C700609E98 /* CenterOriginSlider.swift */,
 				A1433E542840C36A006F48D6 /* Main.storyboard */,
 				A1433E572840C36D006F48D6 /* Assets.xcassets */,
 				A1433E592840C36D006F48D6 /* LaunchScreen.storyboard */,
@@ -241,11 +249,12 @@
 				A19FDE4428C8876800042BDB /* RoundFillButton.swift */,
 				A19D252F28D9BA4A00FBB72B /* AnMessageTextField.swift */,
 				A19D253428D9BCD800FBB72B /* AnMessageTextField.xib */,
+				A1779D1728F666630018C263 /* CropView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		A1433E852840C3BD006F48D6 /* ViewExtension */ = {
+		A1433E852840C3BD006F48D6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				A1433E862840C3BD006F48D6 /* ViewControl.swift */,
@@ -254,7 +263,7 @@
 				A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */,
 				A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */,
 			);
-			path = ViewExtension;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		A1433E982840C438006F48D6 /* Frameworks */ = {
@@ -466,12 +475,14 @@
 				A1433E8C2840C3BD006F48D6 /* ViewControl.swift in Sources */,
 				A1433E892840C3BD006F48D6 /* AnLoadingView.swift in Sources */,
 				A17C7BF3289BA3D500ACD7F7 /* AnPopupStringTableView.swift in Sources */,
+				A167B2D9292CB28A00096E1F /* LogUtil.swift in Sources */,
 				A19FDE4528C8876800042BDB /* RoundFillButton.swift in Sources */,
 				A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */,
 				A1433E8B2840C3BD006F48D6 /* NibOwnerLoadable.swift in Sources */,
 				A1EA819F28DAB1F80076FE1B /* UIColorExt.swift in Sources */,
 				A1B0000128B4CECE004EF6DD /* AnAlertView.swift in Sources */,
 				A1433E8A2840C3BD006F48D6 /* PopInputView.swift in Sources */,
+				A1779D1828F666630018C263 /* CropView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18497B5290285C700609E98 /* CenterOriginSlider.swift in Sources */,
 				A1503AB828446B11004167D4 /* CustomPopupInputView.swift in Sources */,
 				A1433E532840C36A006F48D6 /* ViewController.swift in Sources */,
 				A1433E932840C418006F48D6 /* PopInputViewController.swift in Sources */,
@@ -669,6 +681,7 @@
 		A1433E452840C34C006F48D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -695,6 +708,7 @@
 		A1433E462840C34C006F48D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

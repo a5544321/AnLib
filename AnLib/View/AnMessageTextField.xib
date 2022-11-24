@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,14 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="514" height="98"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tb-dS-dvu">
-                    <rect key="frame" x="8" y="77" width="36" height="17"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.90980392156862744" green="0.36078431372549019" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLm-sf-cpD">
-                    <rect key="frame" x="0.0" y="0.0" width="514" height="73"/>
+                    <rect key="frame" x="0.0" y="0.0" width="514" height="75.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="           " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRA-em-Eye">
                             <rect key="frame" x="14" y="4" width="37.5" height="20"/>
@@ -40,20 +33,20 @@
                             <color key="textColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moe-PP-fzc">
-                            <rect key="frame" x="473" y="20" width="33" height="33"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="moe-PP-fzc" secondAttribute="height" id="YaS-Fv-Omr"/>
-                            </constraints>
-                            <state key="normal" image="ic_pwd_open"/>
-                        </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PVr-93-Bom">
-                            <rect key="frame" x="14" y="32" width="451" height="35"/>
+                            <rect key="frame" x="14" y="24" width="450" height="45.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartQuotesType="no"/>
                         </textField>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moe-PP-fzc">
+                            <rect key="frame" x="472" y="21" width="34" height="33.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="moe-PP-fzc" secondAttribute="height" id="YaS-Fv-Omr"/>
+                            </constraints>
+                            <state key="normal" image="ic_pwd_open"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="0.32000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <constraints>
@@ -64,10 +57,16 @@
                         <constraint firstItem="tRA-em-Eye" firstAttribute="top" secondItem="kLm-sf-cpD" secondAttribute="top" constant="4" id="Wp7-VZ-Ef8"/>
                         <constraint firstAttribute="trailing" secondItem="moe-PP-fzc" secondAttribute="trailing" constant="8" id="rDx-U9-BTC"/>
                         <constraint firstItem="moe-PP-fzc" firstAttribute="height" secondItem="kLm-sf-cpD" secondAttribute="height" multiplier="0.45" id="wFW-Tg-GDc"/>
-                        <constraint firstItem="PVr-93-Bom" firstAttribute="top" secondItem="tRA-em-Eye" secondAttribute="bottom" constant="8" id="xIV-22-aKt"/>
+                        <constraint firstItem="PVr-93-Bom" firstAttribute="top" secondItem="tRA-em-Eye" secondAttribute="bottom" id="xIV-22-aKt"/>
                         <constraint firstItem="moe-PP-fzc" firstAttribute="centerY" secondItem="kLm-sf-cpD" secondAttribute="centerY" id="yv6-U7-Oh8"/>
                     </constraints>
                 </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tb-dS-dvu">
+                    <rect key="frame" x="8" y="79.5" width="31" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.90980392156862744" green="0.36078431372549019" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -82,18 +81,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="195.6521739130435" y="-189.50892857142856"/>
         </view>
-        <view contentMode="scaleToFill" id="TSv-CF-4gw">
-            <rect key="frame" x="0.0" y="0.0" width="712" height="223"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="311.59420289855075" y="82.700892857142847"/>
-        </view>
     </objects>
     <resources>
         <image name="ic_pwd_open" width="24" height="24"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -70,7 +70,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
     
     public var mainView: UIView?
     var topGestureView: UIView?
-    var bottomMargin: CGFloat = 20
+    var bottomMargin: CGFloat = 30
     
     var customSize: CGSize?
     var centerYConstraint: NSLayoutConstraint?
@@ -111,7 +111,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
         }
         mainView = contentView
         mainView!.translatesAutoresizingMaskIntoConstraints = false
-        mainView!.setCornerRadius(radius: 12)
+        mainView!.setCornerRadius(radius: 16)
         self.addSubview(mainView!)
     }
     
@@ -130,7 +130,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
             addTopIndicator()
             animateTopConstraint = contentView.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
             animateTopConstraint?.isActive = true
-            contentView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9).isActive = true
+            contentView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.92).isActive = true
         } else if popStyle == .bottom {
             addTopIndicator()
             animateTopConstraint = contentView.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
@@ -153,7 +153,9 @@ open class AnPopupBasicView: UIView, PopupBasic {
     }
     
     open func adjustHeight() {
-        layoutIfNeeded() // Sync frame size with constraint setting
+        layoutIfNeeded()
+        mainView?.layoutIfNeeded()
+         // Sync frame size with constraint setting
         let cHeight = titleLabel.text?.height(withConstrainedWidth: titleLabel.bounds.width, font: titleLabel.font) ?? 0
         let diff = cHeight - titleLabel.bounds.height
         if diff > 0 {
@@ -166,13 +168,15 @@ open class AnPopupBasicView: UIView, PopupBasic {
             mainHeightConstraint?.constant = mainHeightConstraint!.constant + dif
         }
         layoutIfNeeded()
+        mainView?.layoutIfNeeded()
+        
     }
     /// Set OK button UI & action
-    public func setOKButton(title: String, tintColor: UIColor, isFill: Bool, action: ((Any?) -> ())?) {
+    public func setOKButton(title: String, tintColor: UIColor, textColor: UIColor? = nil, isFill: Bool, action: ((Any?) -> ())?) {
         guard okButton != nil else {
             return
         }
-        setButtonUI(title: title, tintColor: tintColor, isFill: isFill, button: okButton!)
+        setButtonUI(title: title, tintColor: tintColor, textColor: textColor, isFill: isFill, button: okButton!)
         onClickOK = action
     }
     /// Only set OK action, equals to set onClickOK
@@ -180,11 +184,11 @@ open class AnPopupBasicView: UIView, PopupBasic {
         onClickOK = action
     }
     /// Set Cancel button UI & action
-    public func setCancelButton(title: String, tintColor: UIColor, isFill: Bool, action: (() -> ())?) {
+    public func setCancelButton(title: String, tintColor: UIColor, textColor: UIColor? = nil, isFill: Bool, action: (() -> ())?) {
         guard cancelButton != nil else {
             return
         }
-        setButtonUI(title: title, tintColor: tintColor, isFill: isFill, button: cancelButton!)
+        setButtonUI(title: title, tintColor: tintColor, textColor: textColor, isFill: isFill, button: cancelButton!)
         onClickCancel = action
     }
     /// Only set Cancel action, equals to set onClickCancel
@@ -192,18 +196,27 @@ open class AnPopupBasicView: UIView, PopupBasic {
         onClickCancel = action
     }
     
-    func setButtonUI(title: String, tintColor: UIColor, isFill: Bool, button: UIButton) {
+    func setButtonUI(title: String, tintColor: UIColor, textColor: UIColor? = nil, isFill: Bool, button: UIButton) {
         button.setTitle(title, for: .normal)
-        if isFill {
-            button.backgroundColor = tintColor
-            button.setTitleColor(.white, for: .normal)
-        } else {
-            button.backgroundColor = .clear
-            button.setRoundBorder(color: tintColor)
-            button.setTitleColor(tintColor, for: .normal)
+        UIView.performWithoutAnimation {
+            if isFill {
+                button.backgroundColor = tintColor
+                if let color = textColor {
+                    button.setTitleColor(color, for: .normal)
+                } else {
+                    button.setTitleColor(.white, for: .normal)
+                }
+            } else {
+                button.backgroundColor = .clear
+                button.setRoundBorder(color: tintColor)
+                button.setTitleColor(tintColor, for: .normal)
+            }
+            button.layoutIfNeeded()
         }
     }
-    
+    public func setTopIndicator(visible: Bool) {
+        topGestureView?.isHidden = !visible
+    }
     func addTopIndicator() {
         topGestureView = UIView()
         topGestureView?.translatesAutoresizingMaskIntoConstraints = false
@@ -247,23 +260,23 @@ open class AnPopupBasicView: UIView, PopupBasic {
         
         backButton.addTarget(self, action: #selector(onBackgroudClick(sender:)), for: .touchUpInside)
         
-        UIView.transition(with: view, duration: 0.25, options: .transitionCrossDissolve) {
-            self.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(self)
-            
-            self.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-            self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-            self.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-            self.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-            
-            
-        } completion: { (com) in
-            if self.popStyle == .bottomCard || self.popStyle == .bottom
-            {
-                self.adjustHeight()
-                self.showBottomCard(show: true)
-            }
+        self.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(self)
+        self.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        self.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        self.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        self.adjustHeight()
+        
+        if self.popStyle == .bottomCard || self.popStyle == .bottom
+        {
+            self.showBottomCard(show: true)
         }
+//        UIView.transition(with: view, duration: 0.25, options: .transitionCrossDissolve) {
+//
+//        } completion: { (com) in
+//
+//        }
     }
     
     @objc func handleTopPan(_ gestureRecognizer: UIPanGestureRecognizer) {
