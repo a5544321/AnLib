@@ -237,7 +237,7 @@ public class AnToastView: UIView {
 }
 
 public extension UIView {
-    public func showToast(title: String, message: String? = nil, image: UIImage? = nil, position: ToastPosition = .top, length: ToastLength = .medium, style: ColorStyle? = nil, isCancelable: Bool = true) {
+    func showToast(title: String, message: String? = nil, image: UIImage? = nil, position: ToastPosition = .top, length: ToastLength = .medium, style: ColorStyle? = nil, isCancelable: Bool = false) {
         let toast = AnToastView(title: title, message: message, image: image, position: position, length: length, style: style, isCancelable: isCancelable)
         
         toast.showIn(view: self)

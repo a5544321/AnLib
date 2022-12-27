@@ -37,11 +37,13 @@
 		A17C7BF3289BA3D500ACD7F7 /* AnPopupStringTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C7BF2289BA3D500ACD7F7 /* AnPopupStringTableView.swift */; };
 		A17C7BF8289BA48C00ACD7F7 /* AnPopupStringTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C7BF7289BA48C00ACD7F7 /* AnPopupStringTableView.xib */; };
 		A18497B5290285C700609E98 /* CenterOriginSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18497B4290285C700609E98 /* CenterOriginSlider.swift */; };
+		A18F8B6C29543B2900C54961 /* NotificationCenterExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18F8B6B29543B2900C54961 /* NotificationCenterExt.swift */; };
 		A19D253028D9BA4A00FBB72B /* AnMessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19D252F28D9BA4A00FBB72B /* AnMessageTextField.swift */; };
 		A19D253528D9BCD800FBB72B /* AnMessageTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19D253428D9BCD800FBB72B /* AnMessageTextField.xib */; };
 		A19FDE4528C8876800042BDB /* RoundFillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19FDE4428C8876800042BDB /* RoundFillButton.swift */; };
 		A1B0000128B4CECE004EF6DD /* AnAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B0000028B4CECE004EF6DD /* AnAlertView.swift */; };
 		A1B0000628B4CEF9004EF6DD /* AnAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B0000528B4CEF9004EF6DD /* AnAlertView.xib */; };
+		A1DC6F2D2930AC4200C5630C /* CollectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC6F2C2930AC4200C5630C /* CollectionExt.swift */; };
 		A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */; };
 		A1EA819F28DAB1F80076FE1B /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */; };
 		A1EA81A428DAB3430076FE1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1EA81A328DAB3430076FE1B /* Images.xcassets */; };
@@ -122,11 +124,13 @@
 		A17C7BF2289BA3D500ACD7F7 /* AnPopupStringTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnPopupStringTableView.swift; sourceTree = "<group>"; };
 		A17C7BF7289BA48C00ACD7F7 /* AnPopupStringTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnPopupStringTableView.xib; sourceTree = "<group>"; };
 		A18497B4290285C700609E98 /* CenterOriginSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterOriginSlider.swift; sourceTree = "<group>"; };
+		A18F8B6B29543B2900C54961 /* NotificationCenterExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterExt.swift; sourceTree = "<group>"; };
 		A19D252F28D9BA4A00FBB72B /* AnMessageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnMessageTextField.swift; sourceTree = "<group>"; };
 		A19D253428D9BCD800FBB72B /* AnMessageTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnMessageTextField.xib; sourceTree = "<group>"; };
 		A19FDE4428C8876800042BDB /* RoundFillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundFillButton.swift; sourceTree = "<group>"; };
 		A1B0000028B4CECE004EF6DD /* AnAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnAlertView.swift; sourceTree = "<group>"; };
 		A1B0000528B4CEF9004EF6DD /* AnAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnAlertView.xib; sourceTree = "<group>"; };
+		A1DC6F2C2930AC4200C5630C /* CollectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExt.swift; sourceTree = "<group>"; };
 		A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		A1EA81A328DAB3430076FE1B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 				A147100F28910BA6007940E9 /* StringExtension.swift */,
 				A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */,
 				A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */,
+				A1DC6F2C2930AC4200C5630C /* CollectionExt.swift */,
+				A18F8B6B29543B2900C54961 /* NotificationCenterExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -476,11 +482,13 @@
 				A1433E892840C3BD006F48D6 /* AnLoadingView.swift in Sources */,
 				A17C7BF3289BA3D500ACD7F7 /* AnPopupStringTableView.swift in Sources */,
 				A167B2D9292CB28A00096E1F /* LogUtil.swift in Sources */,
+				A18F8B6C29543B2900C54961 /* NotificationCenterExt.swift in Sources */,
 				A19FDE4528C8876800042BDB /* RoundFillButton.swift in Sources */,
 				A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */,
 				A1433E8B2840C3BD006F48D6 /* NibOwnerLoadable.swift in Sources */,
 				A1EA819F28DAB1F80076FE1B /* UIColorExt.swift in Sources */,
 				A1B0000128B4CECE004EF6DD /* AnAlertView.swift in Sources */,
+				A1DC6F2D2930AC4200C5630C /* CollectionExt.swift in Sources */,
 				A1433E8A2840C3BD006F48D6 /* PopInputView.swift in Sources */,
 				A1779D1828F666630018C263 /* CropView.swift in Sources */,
 			);
@@ -592,6 +600,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -656,6 +665,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -689,6 +699,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = AnLib/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -716,6 +727,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = AnLib/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (

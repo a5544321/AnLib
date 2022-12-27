@@ -48,7 +48,14 @@ public class AnMessageTextField: UIView, NibOwnerLoadable  {
     public var isEmpty: Bool {
         return (textField.text?.isEmpty ?? true)
     }
-    
+    public var textContentType: UITextContentType {
+        get {
+            textField.textContentType
+        }
+        set {
+            textField.textContentType = newValue
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

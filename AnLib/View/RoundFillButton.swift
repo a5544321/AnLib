@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class RoundFillButton: UIButton {
+open class RoundFillButton: UIButton {
     @IBInspectable public var mainColor: UIColor = .blue {
         didSet {
             setUI()
@@ -46,7 +46,7 @@ public class RoundFillButton: UIButton {
         setUI()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
     }

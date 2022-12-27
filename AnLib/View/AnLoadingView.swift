@@ -66,14 +66,14 @@ class AnLoadingView: UIView {
     
 }
 
-extension UIView {
+public extension UIView {
     func showLoading(message: String?) {
         let loadingView = AnLoadingView(message: message)
         self.addSubview(loadingView)
         loadingView.addConstraintFitSuperViewByCenter()
     }
     
-    func stopLoading() {
+    func stopLoading(tag: Int = 0) {
         for view in subviews {
             if let loadingView = view as? AnLoadingView {
                 loadingView.removeFromSuperview()

@@ -231,13 +231,14 @@ open class AnPopupBasicView: UIView, PopupBasic {
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(handleTopPan(_:)))
         topGestureView?.addGestureRecognizer(gesture)
         
-        NSLayoutConstraint.activate([topGestureView!.widthAnchor.constraint(equalTo: mainView!.widthAnchor, multiplier: 0.8),
-                                     topGestureView!.heightAnchor.constraint(equalToConstant: 19),
+        NSLayoutConstraint.activate([topGestureView!.widthAnchor.constraint(equalTo: mainView!.widthAnchor, multiplier: 0.9),
+//                                     topGestureView!.heightAnchor.constraint(equalToConstant: 19),
+                                     topGestureView!.bottomAnchor.constraint(equalTo: messageLabel?.bottomAnchor ?? titleLabel.bottomAnchor ),
                                      topGestureView!.topAnchor.constraint(equalTo: mainView!.topAnchor),
                                      topGestureView!.centerXAnchor.constraint(equalTo: mainView!.centerXAnchor),
                                      indicator.widthAnchor.constraint(equalToConstant: 40),
                                      indicator.heightAnchor.constraint(equalToConstant: 5),
-                                     indicator.centerYAnchor.constraint(equalTo: topGestureView!.centerYAnchor),
+                                     indicator.topAnchor.constraint(equalTo: topGestureView!.topAnchor, constant: 7),
                                      indicator.centerXAnchor.constraint(equalTo: topGestureView!.centerXAnchor)])
     }
     
