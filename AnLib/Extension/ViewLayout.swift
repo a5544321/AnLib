@@ -33,9 +33,9 @@ public extension UIView {
         layer.mask = mask
     }
     
-    func setRoundBorder(color: UIColor) {
+    func setRoundBorder(color: UIColor, width: CGFloat = 1) {
         self.layer.cornerRadius = self.bounds.height * 0.5
-        self.layer.borderWidth = 1
+        self.layer.borderWidth = width
         self.layer.borderColor = color.cgColor
     }
     

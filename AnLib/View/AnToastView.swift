@@ -26,7 +26,7 @@ public class AnToastView: UIView {
     var style: ColorStyle?
     var leftImage: UIImage?
     var isCancelable: Bool = true
-    let margin: CGFloat = 8.0
+    let margin: CGFloat = 16.0
     var mTitle: String!
     var viewHeightConstraint: NSLayoutConstraint!
     var titleHeightConstraint: NSLayoutConstraint!
@@ -49,9 +49,9 @@ public class AnToastView: UIView {
     }
     var closeWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .phone{
-            return 20
+            return 16
         } else {
-            return 30
+            return 25
         }
     }
     
@@ -90,7 +90,7 @@ public class AnToastView: UIView {
            let msgLb = messageLabel{
             let messageHeight = msg.height(withConstrainedWidth: msgLb.bounds.width, font: msgLb.font)
             messageHeightConstraint?.constant = messageHeight
-            totalHeight += messageHeight + margin
+            totalHeight += messageHeight + (margin * 0.5)
         }
         viewHeightConstraint.constant = totalHeight
     }
@@ -149,7 +149,7 @@ public class AnToastView: UIView {
             self.addSubview(messageLabel!)
             NSLayoutConstraint.activate([messageLabel!.centerXAnchor.constraint(equalTo: titleLabel!.centerXAnchor),
                                          messageLabel!.widthAnchor.constraint(equalTo: titleLabel!.widthAnchor),
-                                         messageLabel!.topAnchor.constraint(equalTo: titleLabel!.bottomAnchor, constant: margin)])
+                                         messageLabel!.topAnchor.constraint(equalTo: titleLabel!.bottomAnchor, constant: margin * 0.5)])
             let messageHeight = msg.height(withConstrainedWidth: messageLabel!.bounds.width, font: messageLabel!.font)
             messageHeightConstraint =  messageLabel?.heightAnchor.constraint(equalToConstant: messageHeight)
             messageHeightConstraint?.isActive = true

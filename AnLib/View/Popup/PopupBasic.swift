@@ -171,6 +171,11 @@ open class AnPopupBasicView: UIView, PopupBasic {
         mainView?.layoutIfNeeded()
         
     }
+    
+    public func setMessageAlignment(alignment: NSTextAlignment) {
+        messageLabel?.textAlignment = alignment
+    }
+    
     /// Set OK button UI & action
     public func setOKButton(title: String, tintColor: UIColor, textColor: UIColor? = nil, isFill: Bool, action: ((Any?) -> ())?) {
         guard okButton != nil else {
