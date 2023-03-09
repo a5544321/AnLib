@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class AnAlertView: AnPopupBasicView {
+open class AnAlertView: AnPopupBasicView {
     
     @IBOutlet weak var titleTopToImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleTopToSuperConstraint: NSLayoutConstraint!
@@ -22,6 +22,7 @@ public class AnAlertView: AnPopupBasicView {
         
         mImage = image
         super.init(title: title, message: message, size: nil, popStyle: popStyle)
+        mImageView.image = mImage
     }
     
     required public init?(coder: NSCoder) {
@@ -37,9 +38,8 @@ public class AnAlertView: AnPopupBasicView {
         cancelButton?.isHidden = false
         adjustHeight()
     }
-    public override func adjustHeight() {
+    open override func adjustHeight() {
         if mImage != nil {
-            mImageView.image = mImage
             mainHeightConstraint?.constant = 320
         } else {
             mImageView.isHidden = true

@@ -35,6 +35,7 @@ open class RoundFillButton: UIButton {
             let bColor = isEnabled ? mainColor : UIColor(hex: "#808080").withAlphaComponent(0.12)
             if isFill {
                 backgroundColor = bColor
+                setRoundBorder(color: .clear)
             } else {
                 setRoundBorder(color: bColor)
             }

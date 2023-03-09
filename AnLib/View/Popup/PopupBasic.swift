@@ -75,7 +75,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
     var customSize: CGSize?
     var centerYConstraint: NSLayoutConstraint?
     var titleHeightConstraint: NSLayoutConstraint?
-    var mainHeightConstraint: NSLayoutConstraint?
+    public var mainHeightConstraint: NSLayoutConstraint?
     var animateTopConstraint: NSLayoutConstraint?
     
     override public init(frame: CGRect) {
@@ -99,8 +99,8 @@ open class AnPopupBasicView: UIView, PopupBasic {
         messageLabel?.text = message
         self.popStyle = popStyle
         self.customSize = size
-        initConstraint()
         configSize()
+        initConstraint()
     }
     
     public func loadNib() {
@@ -138,7 +138,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
             contentView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
             bottomMargin = 0
         }
-        
+        layoutIfNeeded()
     }
     
     open func configSize() {
@@ -273,6 +273,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
         self.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         self.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         self.adjustHeight()
+        layoutIfNeeded()
         
         if self.popStyle == .bottomCard || self.popStyle == .bottom
         {

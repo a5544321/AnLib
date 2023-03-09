@@ -17,6 +17,7 @@ open class AnPopInputView: AnPopupBasicView, PopInput {
         
     @IBOutlet public weak var inputTextField: UITextField?
     @IBOutlet public weak var inputTextView: UITextView?
+    @IBOutlet public weak var inputMessageField: AnMessageTextField?
     
     
     @objc open override func clickOK() {
@@ -25,6 +26,9 @@ open class AnPopInputView: AnPopupBasicView, PopInput {
         }
         else if let tv = inputTextView {
             onClickOK?(tv.text)
+        }
+        else if let imf = inputMessageField {
+            onClickOK?(imf.text)
         }
         self.removeFromSuperview()
     }

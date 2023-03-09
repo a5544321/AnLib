@@ -12,15 +12,21 @@ public protocol AnMessageTextFieldDelegate: AnyObject {
     func textFieldDidChanged(sender: AnMessageTextField)
     func textFieldShouldReturn(sender: AnMessageTextField) -> Bool
 }
+extension AnMessageTextFieldDelegate {
+    func textFieldShouldReturn(sender: AnMessageTextField) -> Bool {
+        return true
+    }
+}
+
 public class AnMessageTextField: UIView, NibOwnerLoadable  {
     private let errorRed: UIColor = UIColor(hex: "#E85C4A")
     private let msgNormalColor: UIColor = UIColor(hex: "#9B9B9B")
     public var placeholderColor: UIColor = UIColor(hex: "#909090")
     public weak var delegate: AnMessageTextFieldDelegate?
     let cr: CGFloat = 6
-    public var textLimitCount: Int = -1 {
+    public var textCountLimit: Int = -1 {
         didSet {
-            if textLimitCount > 0 {
+            if textCountLimit > 0 {
                 updateCountLabel()
                 countLabel.isHidden = false
             } else {
@@ -43,6 +49,15 @@ public class AnMessageTextField: UIView, NibOwnerLoadable  {
     @IBInspectable var isPasswordType: Bool = false {
         didSet {
             checkSecureType()
+        }
+    }
+    
+    public var clearMode: UITextField.ViewMode {
+        get {
+            return textField.clearButtonMode
+        }
+        set {
+            textField.clearButtonMode = newValue
         }
     }
     
@@ -123,6 +138,7 @@ public class AnMessageTextField: UIView, NibOwnerLoadable  {
         titleLabel.isHidden = isEmpty
         coverLabel.isHidden = !isEmpty
         rightButton.isHidden = !isPasswordType || isEmpty
+        updateCountLabel()
     }
     
     public func showErrorMessage(errMsg: String) {
@@ -151,11 +167,11 @@ public class AnMessageTextField: UIView, NibOwnerLoadable  {
     }
     
     func updateCountLabel() {
-        guard textLimitCount > 0 else {
+        guard textCountLimit > 0 else {
             return
         }
         
-        countLabel.text = String(format: "%d/%d", text?.count ?? 0, textLimitCount)
+        countLabel.text = String(format: "%d/%d", text?.count ?? 0, textCountLimit)
     }
     
     public func startEditing() {
@@ -192,19 +208,19 @@ extension AnMessageTextField: UITextFieldDelegate {
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard textLimitCount > 0 else {
+        guard textCountLimit > 0 else {
             return true
         }
         if string.isEmpty {
             return true
         }
         
-        return textField.text?.count ?? 0 < textLimitCount
+        return textField.text?.count ?? 0 < textCountLimit
     }
     
     @objc private func textFieldEditingChangedAction() {
+        cancelError()
         updateCountLabel()
         delegate?.textFieldDidChanged(sender: self)
-        cancelError()
     }
 }
