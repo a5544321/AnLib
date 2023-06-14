@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="countLabel" destination="lRG-Eb-rIz" id="qfl-BL-eSf"/>
                 <outlet property="coverLabel" destination="LXV-kc-PGk" id="xa1-h7-GIh"/>
+                <outlet property="disableView" destination="gD9-2f-sbS" id="vB9-vP-deA"/>
                 <outlet property="messageLabel" destination="7Tb-dS-dvu" id="PVl-XZ-ChU"/>
                 <outlet property="rightButton" destination="moe-PP-fzc" id="1ak-wo-Bb2"/>
                 <outlet property="textField" destination="PVr-93-Bom" id="8gv-br-8Jo"/>
@@ -53,19 +54,27 @@
                             <color key="textColor" name="B7Gray"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gD9-2f-sbS" userLabel="DisableView">
+                            <rect key="frame" x="0.0" y="0.0" width="514" height="53.5"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="0.32000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="gD9-2f-sbS" firstAttribute="top" secondItem="kLm-sf-cpD" secondAttribute="top" id="45a-nX-mnK"/>
                         <constraint firstAttribute="bottom" secondItem="LXV-kc-PGk" secondAttribute="bottom" id="8Rp-c5-VN9"/>
                         <constraint firstItem="LXV-kc-PGk" firstAttribute="leading" secondItem="kLm-sf-cpD" secondAttribute="leading" constant="14" id="8ug-ve-zhe"/>
                         <constraint firstItem="LXV-kc-PGk" firstAttribute="top" secondItem="kLm-sf-cpD" secondAttribute="top" id="9cJ-vt-mP1"/>
                         <constraint firstItem="moe-PP-fzc" firstAttribute="leading" secondItem="PVr-93-Bom" secondAttribute="trailing" constant="8" id="Ghs-Nw-Cp5"/>
+                        <constraint firstAttribute="trailing" secondItem="gD9-2f-sbS" secondAttribute="trailing" id="Gsj-mG-4HZ"/>
                         <constraint firstItem="PVr-93-Bom" firstAttribute="leading" secondItem="tRA-em-Eye" secondAttribute="leading" id="HBd-hJ-zgl"/>
                         <constraint firstItem="tRA-em-Eye" firstAttribute="leading" secondItem="kLm-sf-cpD" secondAttribute="leading" constant="14" id="JBW-zA-Idl"/>
                         <constraint firstAttribute="bottom" secondItem="PVr-93-Bom" secondAttribute="bottom" constant="6" id="KVQ-j3-chP"/>
                         <constraint firstItem="tRA-em-Eye" firstAttribute="top" secondItem="kLm-sf-cpD" secondAttribute="top" constant="4" id="Wp7-VZ-Ef8"/>
+                        <constraint firstAttribute="bottom" secondItem="gD9-2f-sbS" secondAttribute="bottom" id="YiX-hx-8l9"/>
                         <constraint firstAttribute="trailing" secondItem="LXV-kc-PGk" secondAttribute="trailing" id="c0g-tH-vBf"/>
                         <constraint firstAttribute="trailing" secondItem="moe-PP-fzc" secondAttribute="trailing" constant="8" id="rDx-U9-BTC"/>
+                        <constraint firstItem="gD9-2f-sbS" firstAttribute="leading" secondItem="kLm-sf-cpD" secondAttribute="leading" id="u5I-L1-iCA"/>
                         <constraint firstItem="moe-PP-fzc" firstAttribute="height" secondItem="kLm-sf-cpD" secondAttribute="height" multiplier="0.45" id="wFW-Tg-GDc"/>
                         <constraint firstItem="PVr-93-Bom" firstAttribute="top" secondItem="tRA-em-Eye" secondAttribute="bottom" id="xIV-22-aKt"/>
                         <constraint firstItem="moe-PP-fzc" firstAttribute="centerY" secondItem="kLm-sf-cpD" secondAttribute="centerY" id="yv6-U7-Oh8"/>

@@ -30,6 +30,8 @@
 		A147101028910BA6007940E9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A147100F28910BA6007940E9 /* StringExtension.swift */; };
 		A147101A289123F8007940E9 /* ImageAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1471019289123F8007940E9 /* ImageAlertView.swift */; };
 		A147101F289124EB007940E9 /* ImageAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A147101E289124EB007940E9 /* ImageAlertView.xib */; };
+		A14E696D29CD76A800AFDC8E /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E696C29CD76A800AFDC8E /* UIExtension.swift */; };
+		A14E696F29CD8A1A00AFDC8E /* LocalizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E696E29CD8A1A00AFDC8E /* LocalizeLabel.swift */; };
 		A1503AB328446994004167D4 /* CustomPopupInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1503AB228446994004167D4 /* CustomPopupInputView.xib */; };
 		A1503AB828446B11004167D4 /* CustomPopupInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1503AB728446B11004167D4 /* CustomPopupInputView.swift */; };
 		A167B2D9292CB28A00096E1F /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A167B2D8292CB28A00096E1F /* LogUtil.swift */; };
@@ -47,6 +49,7 @@
 		A19FDE4528C8876800042BDB /* RoundFillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19FDE4428C8876800042BDB /* RoundFillButton.swift */; };
 		A1B0000128B4CECE004EF6DD /* AnAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B0000028B4CECE004EF6DD /* AnAlertView.swift */; };
 		A1B0000628B4CEF9004EF6DD /* AnAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B0000528B4CEF9004EF6DD /* AnAlertView.xib */; };
+		A1B85EE02A2DC31800B265FC /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B85EDF2A2DC31800B265FC /* KeyChain.swift */; };
 		A1DC6F2D2930AC4200C5630C /* CollectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC6F2C2930AC4200C5630C /* CollectionExt.swift */; };
 		A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */; };
 		A1EA819F28DAB1F80076FE1B /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */; };
@@ -122,6 +125,8 @@
 		A147100F28910BA6007940E9 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A1471019289123F8007940E9 /* ImageAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAlertView.swift; sourceTree = "<group>"; };
 		A147101E289124EB007940E9 /* ImageAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageAlertView.xib; sourceTree = "<group>"; };
+		A14E696C29CD76A800AFDC8E /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
+		A14E696E29CD8A1A00AFDC8E /* LocalizeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeLabel.swift; sourceTree = "<group>"; };
 		A1503AB228446994004167D4 /* CustomPopupInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopupInputView.xib; sourceTree = "<group>"; };
 		A1503AB728446B11004167D4 /* CustomPopupInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupInputView.swift; sourceTree = "<group>"; };
 		A167B2D8292CB28A00096E1F /* LogUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogUtil.swift; sourceTree = "<group>"; };
@@ -138,6 +143,7 @@
 		A19FDE4428C8876800042BDB /* RoundFillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundFillButton.swift; sourceTree = "<group>"; };
 		A1B0000028B4CECE004EF6DD /* AnAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnAlertView.swift; sourceTree = "<group>"; };
 		A1B0000528B4CEF9004EF6DD /* AnAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnAlertView.xib; sourceTree = "<group>"; };
+		A1B85EDF2A2DC31800B265FC /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		A1BCA3C12994D560006AA2DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		A1BCA3C22994D560006AA2DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A1BCA3CB2994D794006AA2DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -214,6 +220,7 @@
 				A1433E402840C34C006F48D6 /* Info.plist */,
 				A1EA81A328DAB3430076FE1B /* Images.xcassets */,
 				A167B2D8292CB28A00096E1F /* LogUtil.swift */,
+				A1B85EDF2A2DC31800B265FC /* KeyChain.swift */,
 			);
 			path = AnLib;
 			sourceTree = "<group>";
@@ -268,6 +275,7 @@
 				A19D253428D9BCD800FBB72B /* AnMessageTextField.xib */,
 				A1779D1728F666630018C263 /* CropView.swift */,
 				A18E883329751B7B008E8839 /* BottomLineCollectionView */,
+				A14E696E29CD8A1A00AFDC8E /* LocalizeLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,6 +290,7 @@
 				A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */,
 				A1DC6F2C2930AC4200C5630C /* CollectionExt.swift */,
 				A18F8B6B29543B2900C54961 /* NotificationCenterExt.swift */,
+				A14E696C29CD76A800AFDC8E /* UIExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -509,12 +518,15 @@
 				A1433E8C2840C3BD006F48D6 /* ViewControl.swift in Sources */,
 				A1433E892840C3BD006F48D6 /* AnLoadingView.swift in Sources */,
 				A17C7BF3289BA3D500ACD7F7 /* AnPopupStringTableView.swift in Sources */,
+				A14E696D29CD76A800AFDC8E /* UIExtension.swift in Sources */,
 				A167B2D9292CB28A00096E1F /* LogUtil.swift in Sources */,
 				A18F8B6C29543B2900C54961 /* NotificationCenterExt.swift in Sources */,
 				A19FDE4528C8876800042BDB /* RoundFillButton.swift in Sources */,
+				A1B85EE02A2DC31800B265FC /* KeyChain.swift in Sources */,
 				A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */,
 				A1433E8B2840C3BD006F48D6 /* NibOwnerLoadable.swift in Sources */,
 				A1EA819F28DAB1F80076FE1B /* UIColorExt.swift in Sources */,
+				A14E696F29CD8A1A00AFDC8E /* LocalizeLabel.swift in Sources */,
 				A1B0000128B4CECE004EF6DD /* AnAlertView.swift in Sources */,
 				A1DC6F2D2930AC4200C5630C /* CollectionExt.swift in Sources */,
 				A1433E8A2840C3BD006F48D6 /* PopInputView.swift in Sources */,

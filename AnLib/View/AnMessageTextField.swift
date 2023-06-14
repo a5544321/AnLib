@@ -43,12 +43,18 @@ public class AnMessageTextField: UIView, NibOwnerLoadable  {
             topContainerView.setCornerRadius(radius: cr)
         }
     }
+    @IBOutlet weak var disableView: UIView!
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var textField: UITextField!
     
     @IBInspectable var isPasswordType: Bool = false {
         didSet {
             checkSecureType()
+        }
+    }
+    @IBInspectable public var isEnable: Bool = true {
+        didSet {
+            checkEnableStatus()
         }
     }
     
@@ -102,12 +108,17 @@ public class AnMessageTextField: UIView, NibOwnerLoadable  {
         textField.delegate = self
         textField.isHidden = true
         titleLabel.isHidden = true
+        checkEnableStatus()
         checkSecureType()
         textField.addTarget(self, action: #selector(textFieldEditingChangedAction), for: .editingChanged)
         rightButton.imageView?.tintColor = UIColor(hex: "#CECECE")
         rightButton.isHidden = true
         let tg = UITapGestureRecognizer(target: self, action: #selector(didTapTop))
         topContainerView.addGestureRecognizer(tg)
+    }
+    
+    private func checkEnableStatus() {
+        disableView.isHidden = isEnable
     }
     
     func checkSecureType() {
@@ -123,6 +134,9 @@ public class AnMessageTextField: UIView, NibOwnerLoadable  {
     }
     
     @objc func didTapTop() {
+        guard isEnable else {
+            return
+        }
         self.textField.becomeFirstResponder()
     }
     
@@ -208,10 +222,14 @@ extension AnMessageTextField: UITextFieldDelegate {
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard textCountLimit > 0 else {
+        if string.isEmpty {
             return true
         }
-        if string.isEmpty {
+        if textField.text?.count ?? 0 >= 200 {
+            return false
+        }
+        
+        guard textCountLimit > 0 else {
             return true
         }
         

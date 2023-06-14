@@ -101,7 +101,7 @@ public class AnToastView: UIView {
         leftImageView = UIImageView(frame: .zero)
         leftImageView?.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(leftImageView!)
-        NSLayoutConstraint.activate([leftImageView!.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+        NSLayoutConstraint.activate([leftImageView!.topAnchor.constraint(equalTo: self.topAnchor, constant: margin),
                                      leftImageView!.widthAnchor.constraint(equalToConstant: imageWidth),
                                      leftImageView!.heightAnchor.constraint(equalToConstant: imageWidth),
                                      leftImageView!.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: margin)])

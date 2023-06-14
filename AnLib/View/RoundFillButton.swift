@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class RoundFillButton: UIButton {
+open class RoundFillButton: LocalizeButton {
     @IBInspectable public var mainColor: UIColor = .blue {
         didSet {
             setUI()
@@ -56,7 +56,7 @@ open class RoundFillButton: UIButton {
         setCornerRadius(radius: bounds.height * 0.5)
         setTitleColor(.gray, for: .disabled)
         if isFill {
-            backgroundColor = mainColor
+            backgroundColor = isEnabled ? mainColor : UIColor(hex: "#808080").withAlphaComponent(0.12)
             let tColor: UIColor = customTitleColor == nil ? .white : customTitleColor!
             setTitleColor(tColor, for: .normal)
             setTitleColor(tColor.withAlphaComponent(0.4), for: .highlighted)

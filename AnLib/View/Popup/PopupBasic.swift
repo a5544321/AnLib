@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol PopupBasic {
-    var titleLabel: UILabel! { get set }
+    var titleLabel: UILabel? { get set }
     var messageLabel: UILabel? { get set }
     var okButton: UIButton? { get set }
     var cancelButton: UIButton? { get set }
@@ -29,7 +29,7 @@ public enum PopStyle {
 }
 
 open class AnPopupBasicView: UIView, PopupBasic {
-    @IBOutlet public weak var titleLabel: UILabel!
+    @IBOutlet public weak var titleLabel: UILabel?
     
     @IBOutlet public weak var messageLabel: UILabel?
     
@@ -71,6 +71,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
     public var mainView: UIView?
     var topGestureView: UIView?
     var bottomMargin: CGFloat = 30
+    var needAdjustHeight: Bool = true
     
     var customSize: CGSize?
     var centerYConstraint: NSLayoutConstraint?
@@ -91,11 +92,13 @@ open class AnPopupBasicView: UIView, PopupBasic {
     }
     
     /// All element in Nib should set height except message label (Dynamic height)
-    public init(title: String?, message: String?, size: CGSize? = nil, popStyle: PopStyle = .alert) {
+    public init(title: String?, message: String?, size: CGSize? = nil, needAdjustHeight: Bool = true, popStyle: PopStyle = .alert) {
         super.init(frame: .zero)
+        self.translatesAutoresizingMaskIntoConstraints = false
         loadNib()
+        self.needAdjustHeight = needAdjustHeight
         customInit()
-        titleLabel.text = title
+        titleLabel?.text = title
         messageLabel?.text = message
         self.popStyle = popStyle
         self.customSize = size
@@ -120,12 +123,11 @@ open class AnPopupBasicView: UIView, PopupBasic {
             return
         }
         contentView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        titleHeightConstraint = titleLabel.heightAnchor.constraint(equalToConstant: 25)
-        titleHeightConstraint?.isActive = true
+        
         if popStyle == .alert {
             centerYConstraint = NSLayoutConstraint(item: contentView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: CGFloat(verticleRate), constant: 0)
             centerYConstraint?.isActive = true
-            contentView.widthAnchor.constraint(equalToConstant: contentView.bounds.width).isActive = true
+            contentView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8).isActive = true
         } else if popStyle == .bottomCard{
             addTopIndicator()
             animateTopConstraint = contentView.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
@@ -153,15 +155,26 @@ open class AnPopupBasicView: UIView, PopupBasic {
     }
     
     open func adjustHeight() {
+        guard needAdjustHeight else {
+            return
+        }
         layoutIfNeeded()
         mainView?.layoutIfNeeded()
          // Sync frame size with constraint setting
-        let cHeight = titleLabel.text?.height(withConstrainedWidth: titleLabel.bounds.width, font: titleLabel.font) ?? 0
-        let diff = cHeight - titleLabel.bounds.height
-        if diff > 0 {
-            titleHeightConstraint?.constant = cHeight
-            mainHeightConstraint?.constant = mainHeightConstraint!.constant + diff
+        if let titleLabel = titleLabel {
+            if titleHeightConstraint == nil {
+                titleHeightConstraint = titleLabel.heightAnchor.constraint(equalToConstant: 25)
+                titleHeightConstraint?.isActive = true
+                titleLabel.layoutIfNeeded()
+            }
+            let cHeight = titleLabel.text?.height(withConstrainedWidth: titleLabel.bounds.width, font: titleLabel.font) ?? 0
+            let diff = cHeight - titleLabel.bounds.height
+            if diff > 0 {
+                titleHeightConstraint?.constant = cHeight
+                mainHeightConstraint?.constant = mainHeightConstraint!.constant + diff
+            }
         }
+        
         if let msgLabel = messageLabel {
             let calculateHeight =  msgLabel.text != nil ? msgLabel.text!.height(withConstrainedWidth: msgLabel.bounds.width, font: msgLabel.font) : 0
             let dif = calculateHeight - msgLabel.bounds.height
@@ -169,7 +182,8 @@ open class AnPopupBasicView: UIView, PopupBasic {
         }
         layoutIfNeeded()
         mainView?.layoutIfNeeded()
-        
+        titleLabel?.layoutIfNeeded()
+        messageLabel?.layoutIfNeeded()
     }
     
     public func setMessageAlignment(alignment: NSTextAlignment) {
@@ -238,7 +252,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
         
         NSLayoutConstraint.activate([topGestureView!.widthAnchor.constraint(equalTo: mainView!.widthAnchor, multiplier: 0.9),
 //                                     topGestureView!.heightAnchor.constraint(equalToConstant: 19),
-                                     topGestureView!.bottomAnchor.constraint(equalTo: messageLabel?.bottomAnchor ?? titleLabel.bottomAnchor ),
+                                     topGestureView!.bottomAnchor.constraint(equalTo: messageLabel?.bottomAnchor ?? titleLabel?.bottomAnchor ?? okButton?.topAnchor ?? mainView!.bottomAnchor ),
                                      topGestureView!.topAnchor.constraint(equalTo: mainView!.topAnchor),
                                      topGestureView!.centerXAnchor.constraint(equalTo: mainView!.centerXAnchor),
                                      indicator.widthAnchor.constraint(equalToConstant: 40),
