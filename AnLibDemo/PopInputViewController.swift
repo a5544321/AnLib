@@ -40,10 +40,7 @@ class PopInputViewController: UIViewController {
 //
 //        view.showIn(view: UIApplication.shared.keyWindow!)
         
-        let message = "Dashcam A (Standard plan)\n" +
-        "  ．Event data will be stored for 30 days.\n" +
-        "  ．100/100 Recordings left for this month.\n\n" +
-        "To keep the event data permently, you can download them before it expires."
+        let message = "Dashcam A (Standard plan)Dashcam A A"
         let alert = AnAlertView(title: "Event Recordings", message: message, image: UIImage(systemName: "questionmark.circle.fill"), popStyle: .alert)
 //        alert.setImageTintColor(color: UIColor(hex: "#6B6B6B"))
         alert.setOKButton(title: "Got it", tintColor: .blue, isFill: true, action: nil)

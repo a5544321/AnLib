@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="cancelButton" destination="mOy-F7-LZU" id="Dha-Fg-Fcs"/>
                 <outlet property="mImageView" destination="2N6-k2-XJs" id="kGd-gw-li0"/>
-                <outlet property="messageLabel" destination="3xi-XO-gZV" id="Hfy-pK-RwN"/>
+                <outlet property="messageTextView" destination="xcN-vy-LEY" id="Mf4-1l-OUe"/>
                 <outlet property="okBottomToCancelConstraint" destination="W7f-It-ias" id="e9g-7W-9ez"/>
                 <outlet property="okBottomToSuperConstraint" destination="bj5-1Y-e3g" id="vb5-nZ-pIm"/>
                 <outlet property="okButton" destination="1AU-sk-lQV" id="mCD-ph-ZBN"/>
@@ -36,14 +36,8 @@
                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="medium"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVH-aB-z7r">
-                    <rect key="frame" x="16" y="139" width="245" height="10"/>
+                    <rect key="frame" x="16" y="139" width="245" height="20.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="1000" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xi-XO-gZV">
-                    <rect key="frame" x="25" y="161" width="227" height="67"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -67,22 +61,29 @@
                         <color key="titleColor" systemColor="systemRedColor"/>
                     </state>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur enim ad minim veniam, quis " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcN-vy-LEY">
+                    <rect key="frame" x="25" y="171.5" width="227" height="64.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="5tl-wo-0sN"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="3xi-XO-gZV" firstAttribute="centerX" secondItem="QHr-bL-Dmo" secondAttribute="centerX" id="5DS-rc-RKd"/>
                 <constraint firstItem="2N6-k2-XJs" firstAttribute="centerX" secondItem="QHr-bL-Dmo" secondAttribute="centerX" id="5ib-9X-q01"/>
                 <constraint firstAttribute="bottom" secondItem="mOy-F7-LZU" secondAttribute="bottom" constant="12" id="5ww-Ke-cua"/>
                 <constraint firstItem="mOy-F7-LZU" firstAttribute="centerX" secondItem="1AU-sk-lQV" secondAttribute="centerX" id="9S2-Is-XOB"/>
+                <constraint firstItem="xcN-vy-LEY" firstAttribute="centerX" secondItem="5tl-wo-0sN" secondAttribute="centerX" id="DQq-CQ-Ofg"/>
                 <constraint firstItem="5tl-wo-0sN" firstAttribute="trailing" secondItem="dVH-aB-z7r" secondAttribute="trailing" constant="16" id="Dw0-2P-c8f"/>
                 <constraint firstItem="1AU-sk-lQV" firstAttribute="width" secondItem="QHr-bL-Dmo" secondAttribute="width" multiplier="0.85" id="Iwt-Mn-bA4"/>
+                <constraint firstItem="xcN-vy-LEY" firstAttribute="width" secondItem="QHr-bL-Dmo" secondAttribute="width" multiplier="0.82" id="OIw-9y-v20"/>
                 <constraint firstItem="mOy-F7-LZU" firstAttribute="top" secondItem="1AU-sk-lQV" secondAttribute="bottom" constant="12" id="W7f-It-ias"/>
+                <constraint firstItem="xcN-vy-LEY" firstAttribute="top" secondItem="dVH-aB-z7r" secondAttribute="bottom" constant="12" id="XMx-8K-CmN"/>
                 <constraint firstItem="2N6-k2-XJs" firstAttribute="width" secondItem="QHr-bL-Dmo" secondAttribute="width" multiplier="0.5" id="b6A-2i-Seh"/>
-                <constraint firstItem="3xi-XO-gZV" firstAttribute="width" secondItem="QHr-bL-Dmo" secondAttribute="width" multiplier="0.82" id="bE7-m2-7tU"/>
                 <constraint firstAttribute="bottom" secondItem="1AU-sk-lQV" secondAttribute="bottom" constant="12" id="bj5-1Y-e3g"/>
-                <constraint firstItem="3xi-XO-gZV" firstAttribute="top" secondItem="dVH-aB-z7r" secondAttribute="bottom" constant="12" id="btd-4i-jsT"/>
-                <constraint firstItem="1AU-sk-lQV" firstAttribute="top" secondItem="3xi-XO-gZV" secondAttribute="bottom" constant="32" id="hVt-L2-4KC"/>
+                <constraint firstItem="1AU-sk-lQV" firstAttribute="top" secondItem="xcN-vy-LEY" secondAttribute="bottom" constant="24" id="cCI-ko-Ykd"/>
                 <constraint firstItem="dVH-aB-z7r" firstAttribute="top" secondItem="2N6-k2-XJs" secondAttribute="bottom" constant="20" id="j2Z-KS-KyZ"/>
                 <constraint firstItem="mOy-F7-LZU" firstAttribute="width" secondItem="1AU-sk-lQV" secondAttribute="width" id="lnU-bW-rvY"/>
                 <constraint firstItem="dVH-aB-z7r" firstAttribute="leading" secondItem="5tl-wo-0sN" secondAttribute="leading" constant="16" id="q20-6q-UXP"/>
@@ -97,11 +98,17 @@
                     <exclude reference="W7f-It-ias"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="41.304347826086961" y="230.02232142857142"/>
+            <point key="canvasLocation" x="41.304347826086961" y="229.6875"/>
         </view>
     </objects>
     <resources>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

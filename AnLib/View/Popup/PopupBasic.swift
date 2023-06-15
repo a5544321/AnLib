@@ -11,6 +11,7 @@ import UIKit
 protocol PopupBasic {
     var titleLabel: UILabel? { get set }
     var messageLabel: UILabel? { get set }
+    var messageTextView: UITextView? { get set }
     var okButton: UIButton? { get set }
     var cancelButton: UIButton? { get set }
     var onClickOK: ( (_ input: Any?)->() )? {get set}
@@ -33,6 +34,8 @@ open class AnPopupBasicView: UIView, PopupBasic {
     
     @IBOutlet public weak var messageLabel: UILabel?
     
+    @IBOutlet public weak var messageTextView: UITextView?
+    
     @IBOutlet public weak var okButton: UIButton?
     
     @IBOutlet public weak var cancelButton: UIButton?
@@ -50,8 +53,8 @@ open class AnPopupBasicView: UIView, PopupBasic {
     }
     
     
-    /// Popup view verticle position in parent view, 1 = center Y, default is 0.7
-    public var verticleRate: Float = 0.8 {
+    /// Popup view verticle position in parent view, 1 = center Y, default is 0.9
+    public var verticleRate: Float = 0.9 {
         didSet{
             guard mainView != nil, popStyle != .bottomCard else {
                 return
@@ -72,6 +75,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
     var topGestureView: UIView?
     var bottomMargin: CGFloat = 30
     var needAdjustHeight: Bool = true
+    var maxHeight: CGFloat?
     
     var customSize: CGSize?
     var centerYConstraint: NSLayoutConstraint?
@@ -100,6 +104,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
         customInit()
         titleLabel?.text = title
         messageLabel?.text = message
+        messageTextView?.text = message
         self.popStyle = popStyle
         self.customSize = size
         configSize()
@@ -179,6 +184,16 @@ open class AnPopupBasicView: UIView, PopupBasic {
             let calculateHeight =  msgLabel.text != nil ? msgLabel.text!.height(withConstrainedWidth: msgLabel.bounds.width, font: msgLabel.font) : 0
             let dif = calculateHeight - msgLabel.bounds.height
             mainHeightConstraint?.constant = mainHeightConstraint!.constant + dif
+            if let max = maxHeight {
+                mainHeightConstraint?.constant = min(mainHeightConstraint!.constant + dif, max)
+            }
+        } else if let msgTV = messageTextView {
+            let calculateHeight =  msgTV.text != nil ? msgTV.text!.height(withConstrainedWidth: msgTV.bounds.width, font: msgTV.font!) : 0
+            let dif = calculateHeight - msgTV.bounds.height
+            mainHeightConstraint?.constant = mainHeightConstraint!.constant + dif
+            if let max = maxHeight {
+                mainHeightConstraint?.constant = min(mainHeightConstraint!.constant, max)
+            }
         }
         layoutIfNeeded()
         mainView?.layoutIfNeeded()
@@ -188,6 +203,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
     
     public func setMessageAlignment(alignment: NSTextAlignment) {
         messageLabel?.textAlignment = alignment
+        messageTextView?.textAlignment = alignment
     }
     
     /// Set OK button UI & action
@@ -262,6 +278,8 @@ open class AnPopupBasicView: UIView, PopupBasic {
     }
     
     open func customInit() {
+        messageTextView?.textContainer.lineFragmentPadding = 0
+        messageTextView?.textContainerInset = .zero
         okButton?.addTarget(self, action: #selector(clickOK), for: .touchUpInside)
         cancelButton?.addTarget(self, action: #selector(clickCancel), for: .touchUpInside)
     }
@@ -286,6 +304,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
         self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         self.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         self.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        maxHeight = view.bounds.height * 0.8
         self.adjustHeight()
         layoutIfNeeded()
         
