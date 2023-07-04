@@ -50,6 +50,7 @@
 		A1B0000128B4CECE004EF6DD /* AnAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B0000028B4CECE004EF6DD /* AnAlertView.swift */; };
 		A1B0000628B4CEF9004EF6DD /* AnAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B0000528B4CEF9004EF6DD /* AnAlertView.xib */; };
 		A1B85EE02A2DC31800B265FC /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B85EDF2A2DC31800B265FC /* KeyChain.swift */; };
+		A1D299042A53FAB6007B2327 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = A1D299032A53FAB6007B2327 /* Readme.md */; };
 		A1DC6F2D2930AC4200C5630C /* CollectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC6F2C2930AC4200C5630C /* CollectionExt.swift */; };
 		A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */; };
 		A1EA819F28DAB1F80076FE1B /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */; };
@@ -148,6 +149,7 @@
 		A1BCA3C22994D560006AA2DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A1BCA3CB2994D794006AA2DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		A1BCA3CC2994D796006AA2DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		A1D299032A53FAB6007B2327 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		A1DC6F2C2930AC4200C5630C /* CollectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExt.swift; sourceTree = "<group>"; };
 		A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
@@ -190,10 +192,9 @@
 		A1433E322840C34C006F48D6 = {
 			isa = PBXGroup;
 			children = (
-				A1433E3E2840C34C006F48D6 /* AnLib */,
-				A1433E4D2840C36A006F48D6 /* AnLibDemo */,
-				A1433E642840C36D006F48D6 /* AnLibDemoTests */,
-				A1433E6F2840C36D006F48D6 /* AnLibDemoUITests */,
+				A1D299032A53FAB6007B2327 /* Readme.md */,
+				A1D299052A53FC8B007B2327 /* Source */,
+				A1D299062A53FCBF007B2327 /* Test */,
 				A1433E3D2840C34C006F48D6 /* Products */,
 				A1433E982840C438006F48D6 /* Frameworks */,
 			);
@@ -210,19 +211,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A1433E3E2840C34C006F48D6 /* AnLib */ = {
+		A1433E3E2840C34C006F48D6 /* AnLibPackage */ = {
 			isa = PBXGroup;
 			children = (
-				A1433E842840C3BD006F48D6 /* NibOwnerLoadable.swift */,
-				A1433E802840C3BD006F48D6 /* View */,
-				A1433E852840C3BD006F48D6 /* Extension */,
 				A1433E3F2840C34C006F48D6 /* AnLib.h */,
 				A1433E402840C34C006F48D6 /* Info.plist */,
+				A1433E802840C3BD006F48D6 /* View */,
+				A1433E852840C3BD006F48D6 /* Extension */,
 				A1EA81A328DAB3430076FE1B /* Images.xcassets */,
 				A167B2D8292CB28A00096E1F /* LogUtil.swift */,
+				A1433E842840C3BD006F48D6 /* NibOwnerLoadable.swift */,
 				A1B85EDF2A2DC31800B265FC /* KeyChain.swift */,
 			);
-			path = AnLib;
+			path = AnLibPackage;
 			sourceTree = "<group>";
 		};
 		A1433E4D2840C36A006F48D6 /* AnLibDemo */ = {
@@ -324,6 +325,24 @@
 				A18E882E2974F5B1008E8839 /* SimpleTextCell.xib */,
 			);
 			path = BottomLineCollectionView;
+			sourceTree = "<group>";
+		};
+		A1D299052A53FC8B007B2327 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A1433E3E2840C34C006F48D6 /* AnLibPackage */,
+				A1433E4D2840C36A006F48D6 /* AnLibDemo */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		A1D299062A53FCBF007B2327 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				A1433E642840C36D006F48D6 /* AnLibDemoTests */,
+				A1433E6F2840C36D006F48D6 /* AnLibDemoUITests */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +485,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D299042A53FAB6007B2327 /* Readme.md in Resources */,
 				A18E883429751C7C008E8839 /* SimpleTextCell.xib in Resources */,
 				A19D253528D9BCD800FBB72B /* AnMessageTextField.xib in Resources */,
 				A1EA81A428DAB3430076FE1B /* Images.xcassets in Resources */,
@@ -745,7 +765,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = AnLib/Info.plist;
+				INFOPLIST_FILE = Source/AnLibPackage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -773,7 +793,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = AnLib/Info.plist;
+				INFOPLIST_FILE = Source/AnLibPackage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
