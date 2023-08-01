@@ -21,6 +21,14 @@ public class KeyChain {
 
         return SecItemAdd(query as CFDictionary, nil)
     }
+    
+    public class func delete(key: String) {
+        let query = [
+            kSecClass as String       : kSecClassGenericPassword as String,
+            kSecAttrAccount as String : key] as [String : Any]
+
+        SecItemDelete(query as CFDictionary)
+    }
 
     public class func load(key: String) -> Data? {
         let query = [
@@ -50,13 +58,7 @@ public class KeyChain {
 }
 
 public extension Data {
-
-    init<T>(from value: T) {
-        var value = value
-        self.init(buffer: UnsafeBufferPointer(start: &value, count: 1))
-    }
-
-    func to<T>(type: T.Type) -> T {
-        return self.withUnsafeBytes { $0.load(as: T.self) }
+    func toString() -> String? {
+        return String(data: self, encoding: .utf8)
     }
 }

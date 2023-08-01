@@ -8,13 +8,15 @@
 import UIKit
 import AnLib
 
-class ViewController: UIViewController, BottomLineCollectionViewDelegate {
+class ViewController: UIViewController, BottomLineCollectionViewDelegate, UITextViewDelegate {
     
     
     
     @IBOutlet weak var bCollectionView: BottomLineCollectionView!
     
     @IBOutlet weak var mSlider: CenterOriginSlider!
+    
+    @IBOutlet weak var mTextview: UITextView!
     
     
     let ev = [-1, -0.66, -0.33, 0, 0.33, 0.66, 1]
@@ -28,6 +30,15 @@ class ViewController: UIViewController, BottomLineCollectionViewDelegate {
         
         bCollectionView.setItems(items: ["123123123","afsdfdqsfioahdsofiuh","afsdfdqsfioahdsofiuh","afsdfdqsfioahdsofiuh","afsdfdqsfioahdsofiuh","afsdfdqsfioahdsofiuh","afsdfdqsfioahdsofiuh","afsdfdqsfioahdsofiuh"])
         bCollectionView.customDelegate = self
+        
+        
+        mTextview.addLink(url: "https://www.google.com", string: "google")
+        mTextview.addLink(url: "https://tw.yahoo.com", string: "12345")
+        mTextview.delegate = self
+    }
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        return true
     }
     
     func didSelectItem(collectionView: UICollectionView, indexPath: IndexPath) {

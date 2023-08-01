@@ -55,6 +55,8 @@
 		A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */; };
 		A1EA819F28DAB1F80076FE1B /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */; };
 		A1EA81A428DAB3430076FE1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1EA81A328DAB3430076FE1B /* Images.xcassets */; };
+		A1F8A2182A57EADA006DD606 /* AnClickScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8A2172A57EADA006DD606 /* AnClickScoreView.swift */; };
+		A1FB316A2A78B2E700E1FE0F /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB31692A78B2E700E1FE0F /* AppUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +156,8 @@
 		A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		A1EA81A328DAB3430076FE1B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A1F8A2172A57EADA006DD606 /* AnClickScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnClickScoreView.swift; sourceTree = "<group>"; };
+		A1FB31692A78B2E700E1FE0F /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,7 @@
 				A167B2D8292CB28A00096E1F /* LogUtil.swift */,
 				A1433E842840C3BD006F48D6 /* NibOwnerLoadable.swift */,
 				A1B85EDF2A2DC31800B265FC /* KeyChain.swift */,
+				A1FB31692A78B2E700E1FE0F /* AppUtility.swift */,
 			);
 			path = AnLibPackage;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				A1779D1728F666630018C263 /* CropView.swift */,
 				A18E883329751B7B008E8839 /* BottomLineCollectionView */,
 				A14E696E29CD8A1A00AFDC8E /* LocalizeLabel.swift */,
+				A1F8A2172A57EADA006DD606 /* AnClickScoreView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -530,6 +536,7 @@
 			files = (
 				A18E883129751B6F008E8839 /* SimpleTextCell.swift in Sources */,
 				A1433E8D2840C3BD006F48D6 /* ViewLayout.swift in Sources */,
+				A1FB316A2A78B2E700E1FE0F /* AppUtility.swift in Sources */,
 				A179D70D28923860003B7AE9 /* AnToastView.swift in Sources */,
 				A147101028910BA6007940E9 /* StringExtension.swift in Sources */,
 				A19D253028D9BA4A00FBB72B /* AnMessageTextField.swift in Sources */,
@@ -541,6 +548,7 @@
 				A14E696D29CD76A800AFDC8E /* UIExtension.swift in Sources */,
 				A167B2D9292CB28A00096E1F /* LogUtil.swift in Sources */,
 				A18F8B6C29543B2900C54961 /* NotificationCenterExt.swift in Sources */,
+				A1F8A2182A57EADA006DD606 /* AnClickScoreView.swift in Sources */,
 				A19FDE4528C8876800042BDB /* RoundFillButton.swift in Sources */,
 				A1B85EE02A2DC31800B265FC /* KeyChain.swift in Sources */,
 				A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */,
@@ -767,6 +775,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Source/AnLibPackage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -795,6 +804,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Source/AnLibPackage/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -814,8 +824,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QNK6V4TQT8;
-				INFOPLIST_FILE = AnLibDemo/Info.plist;
+				DEVELOPMENT_TEAM = C8XRK2QZ5P;
+				INFOPLIST_FILE = Source/AnLibDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -835,7 +845,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QNK6V4TQT8;
-				INFOPLIST_FILE = AnLibDemo/Info.plist;
+				INFOPLIST_FILE = Source/AnLibDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
