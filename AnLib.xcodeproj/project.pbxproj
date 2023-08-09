@@ -52,6 +52,7 @@
 		A1B85EE02A2DC31800B265FC /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B85EDF2A2DC31800B265FC /* KeyChain.swift */; };
 		A1D299042A53FAB6007B2327 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = A1D299032A53FAB6007B2327 /* Readme.md */; };
 		A1DC6F2D2930AC4200C5630C /* CollectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC6F2C2930AC4200C5630C /* CollectionExt.swift */; };
+		A1E094C52A8364F0006A4EE4 /* CGExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E094C42A8364F0006A4EE4 /* CGExtension.swift */; };
 		A1E98F6828C5DB6C0020647E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */; };
 		A1EA819F28DAB1F80076FE1B /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */; };
 		A1EA81A428DAB3430076FE1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1EA81A328DAB3430076FE1B /* Images.xcassets */; };
@@ -153,6 +154,7 @@
 		A1BCA3CC2994D796006AA2DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A1D299032A53FAB6007B2327 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		A1DC6F2C2930AC4200C5630C /* CollectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExt.swift; sourceTree = "<group>"; };
+		A1E094C42A8364F0006A4EE4 /* CGExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGExtension.swift; sourceTree = "<group>"; };
 		A1E98F6728C5DB6C0020647E /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		A1EA819E28DAB1F80076FE1B /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		A1EA81A328DAB3430076FE1B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				A1DC6F2C2930AC4200C5630C /* CollectionExt.swift */,
 				A18F8B6B29543B2900C54961 /* NotificationCenterExt.swift */,
 				A14E696C29CD76A800AFDC8E /* UIExtension.swift */,
+				A1E094C42A8364F0006A4EE4 /* CGExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				A1FB316A2A78B2E700E1FE0F /* AppUtility.swift in Sources */,
 				A179D70D28923860003B7AE9 /* AnToastView.swift in Sources */,
 				A147101028910BA6007940E9 /* StringExtension.swift in Sources */,
+				A1E094C52A8364F0006A4EE4 /* CGExtension.swift in Sources */,
 				A19D253028D9BA4A00FBB72B /* AnMessageTextField.swift in Sources */,
 				A18E883229751B6F008E8839 /* BottomLineCollectionView.swift in Sources */,
 				A147100B2890D760007940E9 /* PopupBasic.swift in Sources */,
