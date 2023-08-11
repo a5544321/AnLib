@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension Array {
-    public mutating func safeInsert(_ newElement: Element, index: Int) {
+public extension Array {
+    mutating func safeInsert(_ newElement: Element, index: Int) {
         if index < count {
             insert(newElement, at: index)
         } else {

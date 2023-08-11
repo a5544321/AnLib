@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIView {
+public extension UIView {
     func addConstraintFitSuperViewByCenter() {
         guard let superView = superview else { return }
         translatesAutoresizingMaskIntoConstraints = false
@@ -62,7 +62,7 @@ public extension UIView {
     }
 }
 
-extension UIImage {
+public extension UIImage {
     var isPortrait:  Bool    { size.height > size.width }
     var isLandscape: Bool    { size.width > size.height }
     var breadth:     CGFloat { min(size.width, size.height) }

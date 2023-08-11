@@ -24,15 +24,26 @@ public extension UIView {
 }
 
 public extension UITextView {
-    func addLink(url: String, string: String) {
+    func addLink(url: String, string: String, color: UIColor = .blue) {
         let attributeString  = NSMutableAttributedString(attributedString: attributedText)
         attributeString.addAttribute(.link, value: url, range: (attributeString.string as NSString).range(of: string))
         self.linkTextAttributes = [
-            .foregroundColor: UIColor.blue,
+            .foregroundColor: color,
             .underlineStyle: NSUnderlineStyle.single.rawValue
         ]
         attributedText = attributeString
         isSelectable = true
         isEditable = false
+    }
+}
+
+public extension Bool {
+    static func chance(percent: Float) -> Bool {
+        if percent >= 1 {return true}
+        if percent <= 0 {return false}
+        
+        let p = Int(percent * 100)
+        
+        return p <= Int.random(in: 1...100)
     }
 }
