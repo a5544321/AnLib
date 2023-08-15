@@ -25,3 +25,13 @@ public extension CGPoint {
         return result
     }
 }
+
+public extension Float {
+    var toDegree: Float {
+        return self * 180 / Float.pi
+    }
+    
+    var toRadian: Float {
+        return self / 180 * Float.pi
+    }
+}
