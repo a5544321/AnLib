@@ -113,13 +113,13 @@ open class AnPopupBasicView: UIView, PopupBasic {
     
     func getNib() -> UINib {
         #if SWIFT_PACKAGE
-        if Bundle.module.path(forResource: String(describing: self), ofType: "nib") != nil {
-            return UINib(nibName: String(describing: self), bundle: Bundle.module)
+        if Bundle.module.path(forResource: String(describing: type(of: self)), ofType: "nib") != nil {
+            return UINib(nibName: String(describing: type(of: self)), bundle: Bundle.module)
         } else {
-            return UINib(nibName: String(describing: self), bundle: Bundle(for: self.classForCoder))
+            return UINib(nibName: String(describing: type(of: self)), bundle: Bundle(for: self.classForCoder))
         }
         #else
-        return UINib(nibName: String(describing: self), bundle: Bundle(for: self.classForCoder))
+        return UINib(nibName: String(describing: type(of: self)), bundle: Bundle(for: self.classForCoder))
         #endif
     }
     
