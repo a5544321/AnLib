@@ -21,7 +21,11 @@ public protocol NibOwnerLoadable: AnyObject {
 public extension NibOwnerLoadable {
     
     static var nib: UINib {
+        #if SWIFT_PACKAGE
+        UINib(nibName: String(describing: self), bundle: Bundle.module)
+        #else
         UINib(nibName: String(describing: self), bundle: Bundle(for: self))
+        #endif
     }
 }
 

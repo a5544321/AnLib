@@ -35,17 +35,17 @@ class PopInputViewController: UIViewController {
     }
     
     @IBAction func onShowAlertClicked(_ sender: Any) {
-        
+        showActionView()
 //        let view = AnAlertView(title: "Image", message: "Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok Are you ok ", image: UIImage(systemName: "questionmark.circle.fill"), popStyle: .bottomCard)
 //
 //        view.showIn(view: UIApplication.shared.keyWindow!)
         
-        let message = "Dashcam A (Standard plan)Dashcam A A"
-        let alert = AnAlertView(title: "Event Recordings", message: message, image: UIImage(systemName: "questionmark.circle.fill"), popStyle: .alert)
-//        alert.setImageTintColor(color: UIColor(hex: "#6B6B6B"))
-        alert.setOKButton(title: "Got it", tintColor: .blue, isFill: true, action: nil)
-        alert.setCancelButton(title: "CCC", tintColor: .red, isFill: false, action: nil)
-        alert.showIn(view: UIApplication.shared.keyWindow!)
+//        let message = "Dashcam A (Standard plan)Dashcam A A"
+//        let alert = AnAlertView(title: "Event Recordings", message: message, image: UIImage(systemName: "questionmark.circle.fill"), popStyle: .alert)
+////        alert.setImageTintColor(color: UIColor(hex: "#6B6B6B"))
+//        alert.setOKButton(title: "Got it", tintColor: .blue, isFill: true, action: nil)
+//        alert.setCancelButton(title: "CCC", tintColor: .red, isFill: false, action: nil)
+//        alert.showIn(view: UIApplication.shared.keyWindow!)
     }
     
     @IBAction func onShowToastClicked(_ sender: Any) {
@@ -54,6 +54,21 @@ class PopInputViewController: UIViewController {
 //        view.setTitleTextColor(color: .red)
         view.showIn(view: self.view)
 //        self.view.showToast(title: "Success!", style: .black)
+    }
+    
+    
+    func showActionView() {
+        let view = AnActionAlertView(title: "ABDS", message: "Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message Enter message", image: UIImage(systemName: "checkmark.circle"), imageTintColor: .brown)
+        view.addAction(title: "Action 1", mainColor: .blue, textColor: .white) { [weak self] button in
+            print("1")
+        }
+        view.addAction(title: "Action 2", mainColor: .orange, textColor: .white) { [weak self] button in
+            print("2")
+        }
+        view.addAction(title: "Action 3", mainColor: .blue, textColor: .black) { [weak self] button in
+            print("3")
+        }
+        view.showIn(view: self.view)
     }
     /*
     // MARK: - Navigation

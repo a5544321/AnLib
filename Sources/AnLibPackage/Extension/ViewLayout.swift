@@ -19,7 +19,9 @@ public extension UIView {
              heightAnchor.constraint(equalTo: superView.heightAnchor)])
     }
     
-    
+    var safeAreaHeight: CGFloat {
+        return safeAreaLayoutGuide.layoutFrame.size.height
+    }
 }
 
 //--------------------------------------------------------------------------------
@@ -83,4 +85,9 @@ public extension UIImage {
                 .draw(in: .init(origin: .zero, size: breadthSize))
         }
     }
+}
+
+struct ScreenSize {
+    static let width  = UIScreen.main.bounds.width
+    static let height = UIScreen.main.bounds.height
 }

@@ -22,6 +22,8 @@
 		A1433E9A2840C438006F48D6 /* AnLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1433E3C2840C34C006F48D6 /* AnLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A147101A289123F8007940E9 /* ImageAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1471019289123F8007940E9 /* ImageAlertView.swift */; };
 		A147101F289124EB007940E9 /* ImageAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A147101E289124EB007940E9 /* ImageAlertView.xib */; };
+		A14FA8802AA6F52B006C7CF9 /* AnActionAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA87F2AA6F52B006C7CF9 /* AnActionAlertView.swift */; };
+		A14FA8822AA6F534006C7CF9 /* AnActionAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14FA8812AA6F534006C7CF9 /* AnActionAlertView.xib */; };
 		A1503AB328446994004167D4 /* CustomPopupInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1503AB228446994004167D4 /* CustomPopupInputView.xib */; };
 		A1503AB828446B11004167D4 /* CustomPopupInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1503AB728446B11004167D4 /* CustomPopupInputView.swift */; };
 		A18497B5290285C700609E98 /* CenterOriginSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18497B4290285C700609E98 /* CenterOriginSlider.swift */; };
@@ -120,6 +122,8 @@
 		A1433E922840C418006F48D6 /* PopInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopInputViewController.swift; sourceTree = "<group>"; };
 		A1471019289123F8007940E9 /* ImageAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAlertView.swift; sourceTree = "<group>"; };
 		A147101E289124EB007940E9 /* ImageAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageAlertView.xib; sourceTree = "<group>"; };
+		A14FA87F2AA6F52B006C7CF9 /* AnActionAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnActionAlertView.swift; sourceTree = "<group>"; };
+		A14FA8812AA6F534006C7CF9 /* AnActionAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnActionAlertView.xib; sourceTree = "<group>"; };
 		A1503AB228446994004167D4 /* CustomPopupInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopupInputView.xib; sourceTree = "<group>"; };
 		A1503AB728446B11004167D4 /* CustomPopupInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupInputView.swift; sourceTree = "<group>"; };
 		A18497B4290285C700609E98 /* CenterOriginSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterOriginSlider.swift; sourceTree = "<group>"; };
@@ -197,6 +201,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A100E94E2AB842F00095A526 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1E094ED2A836CF0006A4EE4 /* AnMessageTextField.xib */,
+				A1E094DB2A836CF0006A4EE4 /* AnPopupStringTableView.xib */,
+				A1E094DC2A836CF0006A4EE4 /* AnPopInputView.xib */,
+				A1E094DE2A836CF0006A4EE4 /* AnAlertView.xib */,
+				A14FA8812AA6F534006C7CF9 /* AnActionAlertView.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A1433E322840C34C006F48D6 = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +319,7 @@
 		A1E094CA2A836CF0006A4EE4 /* AnLibPackage */ = {
 			isa = PBXGroup;
 			children = (
+				A100E94E2AB842F00095A526 /* Resources */,
 				A1E094CB2A836CF0006A4EE4 /* LogUtil.swift */,
 				A1E094CC2A836CF0006A4EE4 /* AnLib.h */,
 				A1E094CD2A836CF0006A4EE4 /* Extension */,
@@ -344,7 +361,6 @@
 				A1E094E72A836CF0006A4EE4 /* RoundFillButton.swift */,
 				A1E094E82A836CF0006A4EE4 /* BottomLineCollectionView */,
 				A1E094EC2A836CF0006A4EE4 /* CropView.swift */,
-				A1E094ED2A836CF0006A4EE4 /* AnMessageTextField.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,13 +368,11 @@
 		A1E094DA2A836CF0006A4EE4 /* Popup */ = {
 			isa = PBXGroup;
 			children = (
-				A1E094DB2A836CF0006A4EE4 /* AnPopupStringTableView.xib */,
-				A1E094DC2A836CF0006A4EE4 /* AnPopInputView.xib */,
 				A1E094DD2A836CF0006A4EE4 /* AnPopupStringTableView.swift */,
-				A1E094DE2A836CF0006A4EE4 /* AnAlertView.xib */,
+				A1E094E12A836CF0006A4EE4 /* AnAlertView.swift */,
+				A14FA87F2AA6F52B006C7CF9 /* AnActionAlertView.swift */,
 				A1E094DF2A836CF0006A4EE4 /* PopInputView.swift */,
 				A1E094E02A836CF0006A4EE4 /* PopupBasic.swift */,
-				A1E094E12A836CF0006A4EE4 /* AnAlertView.swift */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -519,6 +533,7 @@
 				A1E095012A836CF0006A4EE4 /* AnAlertView.xib in Resources */,
 				A1E0950B2A836CF0006A4EE4 /* SimpleTextCell.xib in Resources */,
 				A1E094FE2A836CF0006A4EE4 /* AnPopupStringTableView.xib in Resources */,
+				A14FA8822AA6F534006C7CF9 /* AnActionAlertView.xib in Resources */,
 				A1E0950F2A836CF0006A4EE4 /* AnMessageTextField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +585,7 @@
 				A1E094F92A836CF0006A4EE4 /* ViewLayout.swift in Sources */,
 				A1E095082A836CF0006A4EE4 /* AnLoadingView.swift in Sources */,
 				A1E094F32A836CF0006A4EE4 /* ViewControllerExtension.swift in Sources */,
+				A14FA8802AA6F52B006C7CF9 /* AnActionAlertView.swift in Sources */,
 				A1E095042A836CF0006A4EE4 /* AnAlertView.swift in Sources */,
 				A1E094F82A836CF0006A4EE4 /* UIExtension.swift in Sources */,
 				A1E094FC2A836CF0006A4EE4 /* AppUtility.swift in Sources */,
@@ -849,7 +865,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8XRK2QZ5P;
-				INFOPLIST_FILE = Sources/AnLibDemo/Info.plist;
+				INFOPLIST_FILE = Demo/AnLibDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -869,7 +885,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QNK6V4TQT8;
-				INFOPLIST_FILE = Sources/AnLibDemo/Info.plist;
+				INFOPLIST_FILE = Demo/AnLibDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -24,6 +24,16 @@ public extension CGPoint {
         result.y = x * sin(angle) + y * cos(angle);
         return result
     }
+    
+    func radianFrom(point: CGPoint) -> Float {
+        let origin = CGPoint(x: self.x - point.x, y: self.y - point.y)
+        var bearingRadians = atan2f(Float(origin.y), Float(origin.x))
+        if bearingRadians < 0 {
+            bearingRadians += Float.pi * 2
+        }
+        return bearingRadians
+    }
+    
 }
 
 public extension Float {
