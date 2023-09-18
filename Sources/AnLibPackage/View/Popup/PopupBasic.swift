@@ -111,11 +111,23 @@ open class AnPopupBasicView: UIView, PopupBasic {
         initConstraint()
     }
     
+    func getNib() -> UINib {
+        #if SWIFT_PACKAGE
+        if Bundle.module.path(forResource: String(describing: self), ofType: "nib") != nil {
+            return UINib(nibName: String(describing: self), bundle: Bundle.module)
+        } else {
+            return UINib(nibName: String(describing: self), bundle: Bundle(for: self.classForCoder))
+        }
+        #else
+        return UINib(nibName: String(describing: self), bundle: Bundle(for: self.classForCoder))
+        #endif
+    }
+    
     public func loadNib() {
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle:Bundle(for: self.classForCoder))
+        let nib = getNib()
         guard let views = nib.instantiate(withOwner: self, options: nil) as? [UIView],
-            let contentView = views.first else {
-                fatalError("Fail to load \(self) nib content")
+              let contentView = views.first else {
+            fatalError("Fail to load \(self) nib content")
         }
         mainView = contentView
         mainView!.translatesAutoresizingMaskIntoConstraints = false

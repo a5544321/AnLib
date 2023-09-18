@@ -22,9 +22,13 @@ public extension NibOwnerLoadable {
     
     static var nib: UINib {
         #if SWIFT_PACKAGE
-        UINib(nibName: String(describing: self), bundle: Bundle.module)
+        if Bundle.module.path(forResource: String(describing: self), ofType: "nib") != nil {
+            return UINib(nibName: String(describing: self), bundle: Bundle.module)
+        } else {
+            return UINib(nibName: String(describing: self), bundle: Bundle(for: self))
+        }
         #else
-        UINib(nibName: String(describing: self), bundle: Bundle(for: self))
+        return UINib(nibName: String(describing: self), bundle: Bundle(for: self))
         #endif
     }
 }
