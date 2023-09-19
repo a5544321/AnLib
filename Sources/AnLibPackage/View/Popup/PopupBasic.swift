@@ -101,7 +101,6 @@ open class AnPopupBasicView: UIView, PopupBasic {
         self.translatesAutoresizingMaskIntoConstraints = false
         loadNib()
         self.needAdjustHeight = needAdjustHeight
-        customInit()
         titleLabel?.text = title
         messageLabel?.text = message
         messageTextView?.text = message
@@ -109,6 +108,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
         self.customSize = size
         configSize()
         initConstraint()
+        customInit()
     }
     
     func getNib() -> UINib {
