@@ -144,12 +144,21 @@ open class AnPopupBasicView: UIView, PopupBasic {
         if popStyle == .alert {
             centerYConstraint = NSLayoutConstraint(item: contentView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: CGFloat(verticleRate), constant: 0)
             centerYConstraint?.isActive = true
-            contentView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8).isActive = true
+            if let size = customSize {
+                contentView.widthAnchor.constraint(equalToConstant: size.width).isActive = true
+            } else {
+                contentView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8).isActive = true
+            }
+            
         } else if popStyle == .bottomCard{
             addTopIndicator()
             animateTopConstraint = contentView.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
             animateTopConstraint?.isActive = true
-            contentView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.92).isActive = true
+            if let size = customSize {
+                contentView.widthAnchor.constraint(equalToConstant: size.width).isActive = true
+            } else {
+                contentView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.92).isActive = true
+            }
         } else if popStyle == .bottom {
             addTopIndicator()
             animateTopConstraint = contentView.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
