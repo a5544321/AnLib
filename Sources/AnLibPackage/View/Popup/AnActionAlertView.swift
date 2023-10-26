@@ -11,21 +11,22 @@ open class AnActionAlertView: AnPopupBasicView {
     @IBOutlet weak var titleTopToImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleTopToSuperConstraint: NSLayoutConstraint!
     @IBOutlet weak var stackViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var mImageView: UIImageView!
     @IBOutlet weak var mStackView: UIStackView!
     let buttonHeight = 48
     let stackMargin = 16
+    private var image: UIImage?
     
     var roundButtons: [UIButton] = []
     var handlers: [actionHandler] = []
     public typealias actionHandler = ((UIButton) -> ())?
     
     public init(title: String?, message: String?, image: UIImage?, imageTintColor: UIColor?, popStyle: PopStyle = .bottomCard) {
-        
         super.init(title: title, message: message, size: nil, popStyle: popStyle)
+        self.image = image
         mImageView.image = image
         mImageView.tintColor = imageTintColor
-        
     }
     
     required public init?(coder: NSCoder) {
@@ -43,7 +44,7 @@ open class AnActionAlertView: AnPopupBasicView {
         close()
     }
     
-    public func addAction(title: String, mainColor: UIColor, textColor: UIColor, isFill: Bool = true, action: actionHandler) {
+    public func addAction(title: String, mainColor: UIColor, textColor: UIColor = .white, isFill: Bool = true, action: actionHandler) {
         let roundButton = RoundFillButton(frame: CGRect(x: 0, y: 0, width: 0, height: buttonHeight))
         roundButton.mainColor = mainColor
         roundButton.setTitle(title, for: .normal)
@@ -59,13 +60,15 @@ open class AnActionAlertView: AnPopupBasicView {
     }
     
     open override func adjustHeight() {
-        if mImageView.image != nil {
+        if self.image != nil {
             mainHeightConstraint?.constant = 324
+            imageHeightConstraint.constant = 96
             mImageView.isHidden = false
-            titleTopToImageConstraint.isActive = true
             titleTopToSuperConstraint.isActive = false
+            titleTopToImageConstraint.isActive = true
         } else {
             mImageView.isHidden = true
+            imageHeightConstraint.constant = 0
             mainHeightConstraint?.constant = 194
             titleTopToImageConstraint.isActive = false
             titleTopToSuperConstraint.isActive = true

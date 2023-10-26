@@ -97,7 +97,7 @@ open class AnPopupBasicView: UIView, PopupBasic {
     
     /// All element in Nib should set height except message label (Dynamic height)
     public init(title: String?, message: String?, size: CGSize? = nil, needAdjustHeight: Bool = true, popStyle: PopStyle = .alert) {
-        super.init(frame: .zero)
+        super.init(frame: CGRect(origin: .zero, size: CGSize(width: ScreenSize.width, height: 600)))
         self.translatesAutoresizingMaskIntoConstraints = false
         loadNib()
         self.needAdjustHeight = needAdjustHeight
@@ -326,8 +326,8 @@ open class AnPopupBasicView: UIView, PopupBasic {
         self.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         self.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         maxHeight = view.bounds.height * 0.8
-        self.adjustHeight()
         layoutIfNeeded()
+        self.adjustHeight()
         
         if self.popStyle == .bottomCard || self.popStyle == .bottom
         {

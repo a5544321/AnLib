@@ -130,7 +130,14 @@ public class AnToastView: UIView {
         self.addSubview(titleLabel!)
         
         NSLayoutConstraint.activate([titleLabel!.topAnchor.constraint(equalTo: self.topAnchor, constant: margin),
-                                     titleLabel!.leadingAnchor.constraint(equalTo: leftImageView!.trailingAnchor, constant: margin)])
+                                     ])
+        
+        if leftImage != nil {
+            titleLabel!.leadingAnchor.constraint(equalTo: leftImageView!.trailingAnchor, constant: margin).isActive = true
+        } else {
+            titleLabel!.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margin).isActive = true
+        }
+        
         if isCancelable {
             titleLabel?.trailingAnchor.constraint(equalTo: cancelButton!.leadingAnchor, constant: -margin).isActive = true
         } else {

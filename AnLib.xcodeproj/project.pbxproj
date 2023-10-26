@@ -45,10 +45,8 @@
 		A1E094FE2A836CF0006A4EE4 /* AnPopupStringTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E094DB2A836CF0006A4EE4 /* AnPopupStringTableView.xib */; };
 		A1E094FF2A836CF0006A4EE4 /* AnPopInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E094DC2A836CF0006A4EE4 /* AnPopInputView.xib */; };
 		A1E095002A836CF0006A4EE4 /* AnPopupStringTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E094DD2A836CF0006A4EE4 /* AnPopupStringTableView.swift */; };
-		A1E095012A836CF0006A4EE4 /* AnAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E094DE2A836CF0006A4EE4 /* AnAlertView.xib */; };
 		A1E095022A836CF0006A4EE4 /* PopInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E094DF2A836CF0006A4EE4 /* PopInputView.swift */; };
 		A1E095032A836CF0006A4EE4 /* PopupBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E094E02A836CF0006A4EE4 /* PopupBasic.swift */; };
-		A1E095042A836CF0006A4EE4 /* AnAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E094E12A836CF0006A4EE4 /* AnAlertView.swift */; };
 		A1E095052A836CF0006A4EE4 /* AnToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E094E22A836CF0006A4EE4 /* AnToastView.swift */; };
 		A1E095062A836CF0006A4EE4 /* LocalizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E094E32A836CF0006A4EE4 /* LocalizeLabel.swift */; };
 		A1E095072A836CF0006A4EE4 /* AnClickScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E094E42A836CF0006A4EE4 /* AnClickScoreView.swift */; };
@@ -149,10 +147,8 @@
 		A1E094DB2A836CF0006A4EE4 /* AnPopupStringTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnPopupStringTableView.xib; sourceTree = "<group>"; };
 		A1E094DC2A836CF0006A4EE4 /* AnPopInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnPopInputView.xib; sourceTree = "<group>"; };
 		A1E094DD2A836CF0006A4EE4 /* AnPopupStringTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnPopupStringTableView.swift; sourceTree = "<group>"; };
-		A1E094DE2A836CF0006A4EE4 /* AnAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnAlertView.xib; sourceTree = "<group>"; };
 		A1E094DF2A836CF0006A4EE4 /* PopInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopInputView.swift; sourceTree = "<group>"; };
 		A1E094E02A836CF0006A4EE4 /* PopupBasic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupBasic.swift; sourceTree = "<group>"; };
-		A1E094E12A836CF0006A4EE4 /* AnAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnAlertView.swift; sourceTree = "<group>"; };
 		A1E094E22A836CF0006A4EE4 /* AnToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnToastView.swift; sourceTree = "<group>"; };
 		A1E094E32A836CF0006A4EE4 /* LocalizeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizeLabel.swift; sourceTree = "<group>"; };
 		A1E094E42A836CF0006A4EE4 /* AnClickScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnClickScoreView.swift; sourceTree = "<group>"; };
@@ -207,7 +203,6 @@
 				A1E094ED2A836CF0006A4EE4 /* AnMessageTextField.xib */,
 				A1E094DB2A836CF0006A4EE4 /* AnPopupStringTableView.xib */,
 				A1E094DC2A836CF0006A4EE4 /* AnPopInputView.xib */,
-				A1E094DE2A836CF0006A4EE4 /* AnAlertView.xib */,
 				A14FA8812AA6F534006C7CF9 /* AnActionAlertView.xib */,
 			);
 			path = Resources;
@@ -369,7 +364,6 @@
 			isa = PBXGroup;
 			children = (
 				A1E094DD2A836CF0006A4EE4 /* AnPopupStringTableView.swift */,
-				A1E094E12A836CF0006A4EE4 /* AnAlertView.swift */,
 				A14FA87F2AA6F52B006C7CF9 /* AnActionAlertView.swift */,
 				A1E094DF2A836CF0006A4EE4 /* PopInputView.swift */,
 				A1E094E02A836CF0006A4EE4 /* PopupBasic.swift */,
@@ -530,7 +524,6 @@
 				A1D299042A53FAB6007B2327 /* Readme.md in Resources */,
 				A1E094FD2A836CF0006A4EE4 /* Images.xcassets in Resources */,
 				A1E094FF2A836CF0006A4EE4 /* AnPopInputView.xib in Resources */,
-				A1E095012A836CF0006A4EE4 /* AnAlertView.xib in Resources */,
 				A1E0950B2A836CF0006A4EE4 /* SimpleTextCell.xib in Resources */,
 				A1E094FE2A836CF0006A4EE4 /* AnPopupStringTableView.xib in Resources */,
 				A14FA8822AA6F534006C7CF9 /* AnActionAlertView.xib in Resources */,
@@ -586,7 +579,6 @@
 				A1E095082A836CF0006A4EE4 /* AnLoadingView.swift in Sources */,
 				A1E094F32A836CF0006A4EE4 /* ViewControllerExtension.swift in Sources */,
 				A14FA8802AA6F52B006C7CF9 /* AnActionAlertView.swift in Sources */,
-				A1E095042A836CF0006A4EE4 /* AnAlertView.swift in Sources */,
 				A1E094F82A836CF0006A4EE4 /* UIExtension.swift in Sources */,
 				A1E094FC2A836CF0006A4EE4 /* AppUtility.swift in Sources */,
 				A1E0950E2A836CF0006A4EE4 /* CropView.swift in Sources */,
